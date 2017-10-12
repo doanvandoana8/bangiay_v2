@@ -1,0 +1,115 @@
+ <?php
+ include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/admin/function/sukien/giamgia.php";
+ include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/dbCon.php";
+
+
+?>
+<div class="modal-content">
+ <div class="modal-header" style="border: 1px solid;
+    background-color: #fe980f;">
+   
+    <h4 class="modal-title"  style="text-align: center;font-size: 32px;color: #fff;"> CẬP NHẬT GIÁ KHUYẾN MÃI</h4>
+ </div>
+<form action="" method="post">
+ <div class="modal-body" >
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+          	<?php 
+          	$idsp=$_GET['idsp'];
+          	$tt=layGiaBD($idsp);
+          	$row_tt = mysql_fetch_assoc($tt);
+          	{
+          	?>
+				<div class="col-xs-4">
+					<div class="form-group">
+                        <div class="input-group">
+                        	<label id="nomal_lable">ID sản phẩm </label>
+                        	<input style="height: 35px;" type="text" readonly  id="nomal_lable" value="<?php echo $row_tt['id_san_pham']?>" name="idsp">
+                        </div>
+                     </div>
+				</div>
+
+
+				<div class="col-xs-4">
+					<div class="form-group">
+                        <div class="input-group">		                        
+                           <label id="nomal_lable">Giá ban đầu </label>
+							<input style="height: 35px;" type="text" readonly  id="nomal_lable" value="<?php echo $row_tt['gia_ban_dau']?>" name="txtGiaBD">
+                        </div>
+                     </div>
+				</div>
+
+
+				<div class="col-xs-4">
+					<div class="form-group">
+                        <div class="input-group">
+                    		<label id="nomal_lable">Giá khuyến mãi </label>
+							<input  style="height: 35px;" type="text"  value="<?php echo $row_tt['gia_khuyen_mai']?>" placeholder="Nhập giá khuyến mãi"  id="nomal_lable" name="txtGiaKM">
+                        </div>
+                     </div>
+				</div>
+             <?php
+         	}
+             ?>   
+
+          </div>
+       </div>
+    </div>
+ </div>
+
+ <div class="modal-footer">
+    <div class="form-group">
+       <button style="float: left;" type="submit" name="btn_CapNhat" class="btn btn-lg btn-info"> Cập nhật <span class="glyphicon glyphicon-saved"></span></button>
+ </form>
+
+ 	<form action="" method="post">
+       <button style="float: right;" type="submit" data-dismiss="modal" class="btn btn-lg btn-default" onclick="return confirm('Bạn có muốn hủy việc cập nhật?')" name="btn_huy"> Hủy <span class="glyphicon glyphicon-remove"></span></button>
+	</form>	
+    </div>
+ </div>
+
+</div>
+
+<?php
+if (isset($_POST['btn_huy'])){
+	
+	echo "<script> location.replace('index.php?p=giamgia'); </script>";	
+	echo '<meta http-equiv="refresh" content="0" />';
+}
+?>
+
+<?php
+	
+	if (isset($_POST['btn_CapNhat'])){
+		$id=$_POST['idsp'];
+		$giaBD=$_POST['txtGiaBD'];
+		$giaKM=$_POST['txtGiaKM'];
+		settype($giaBD, 'int');
+		settype($giaKM, 'int');
+		
+	
+	
+
+		if(($giaKM <= 0 )|| ($giaKM>$giaBD))
+		{
+			echo "<script> alert('Vui lòng nhập giá hợp lệ(Giá khuyến mãi không được bằng hoặc nhỏ hơn 0 hay lớn hơn giá ban đầu).');</script>";
+			exit();
+	       
+		}
+		
+		if (capnhatKhuyenMai($id,$giaKM)){
+			echo "<script> alert('Cập nhật khuyến mãi thành công');</script>";
+			echo "<script> location.replace('index.php?p=giamgia'); </script>";
+			
+			echo '<meta http-equiv="refresh" content="0" />';
+		}
+		else{
+			echo "<script> alert('Thao tác thất bại.');</script>";
+			exit();
+		}
+		
+		
+	}
+	
+?>
