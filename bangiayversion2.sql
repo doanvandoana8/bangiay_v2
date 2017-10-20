@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2017 at 01:41 PM
+-- Generation Time: Oct 20, 2017 at 06:39 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -140,7 +140,8 @@ INSERT INTO `chitietdonhang` (`id_don_hang`, `id_san_pham`, `ctdh_so_luong`, `gi
 (98, 24, 1, 269000, 269000),
 (99, 9, 10, 1199, 11990),
 (100, 2, 1, 999000, 999000),
-(100, 3, 1, 12000, 12000);
+(100, 3, 1, 12000, 12000),
+(101, 9, 1, 1199, 1199);
 
 -- --------------------------------------------------------
 
@@ -185,7 +186,8 @@ INSERT INTO `donhang` (`id_don_hang`, `code`, `tai_khoan`, `ten_khach_hang`, `so
 (97, '1e41f9f20fb7c15e2f6268d0a00e81f1', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '0966746080', 'doanvandoana8@gmail.com', '2017-09-10', 'Thủ đức, Thành phố Hồ chí Minh', 'Trần Minh Tú', 'van@gmail.com', 123456789, 'KTX A', 36900, 405900, 'da_xu_li'),
 (98, 'cb3af86fa3a20f3d9c5ba28d64e225c5', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '0966746080', 'doanvandoana8@gmail.com', '2017-09-10', 'Thủ đức, Thành phố Hồ chí Minh', 'Trần Minh Tú', 'da@gmail.com', 123456789, 'KTX A', 26900, 295900, 'da_giao_dich'),
 (99, 'b2297eff779d3dbd5535601c949cf44c', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '0966746080', 'doanvandoana8@gmail.com', '2017-09-10', 'Thủ đức, Thành phố Hồ chí Minh', 'Đoàn Văn ĐOàn', 'tu@gmail.com', 123456789, 'KTX A', 1199, 13189, 'da_xu_li'),
-(100, '82ec4324369e9a3021cf282538c22639', '', 'Đoàn Văn Đoàn', '0123456789', 'doanvandoana8@gmail.com', '2017-10-11', 'KTX B', 'Trần Thành Văn', 'van@gmail.com', 123456654, 'KTX A', 101100, 1112100, 'da_xu_li');
+(100, '82ec4324369e9a3021cf282538c22639', '', 'Đoàn Văn Đoàn', '0123456789', 'doanvandoana8@gmail.com', '2017-10-11', 'KTX B', 'Trần Thành Văn', 'van@gmail.com', 123456654, 'KTX A', 101100, 1112100, 'da_xu_li'),
+(101, '009c40d96da66c899921484affba9e88', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '966746080', 'doanvandoana8@gmail.com', '2017-10-16', 'Thủ đức, Thành phố Hồ chí Minh', 'Trần Minh Tú', 'tu@gmail.com', 123456789, 'alkdjljkasjdk', 120, 1319, 'dang_cho');
 
 -- --------------------------------------------------------
 
@@ -205,7 +207,7 @@ CREATE TABLE `gioithieu` (
 --
 
 INSERT INTO `gioithieu` (`id_gioi_thieu`, `logo_trang_chu`, `trang_chu`, `trang_con`) VALUES
-(1, '<p><span style=\"font-size:16px\"><span style=\"color:#000000\"><span style=\"font-family:Courier New,Courier,monospace\">Cung cấp ra thị trường rất nhiều sản phẩm gi&agrave;y chất lượng, mẫu m&atilde; đa dạng, style mới nhất... mang đến cho Qu&yacute; Kh&aacute;ch H&agrave;ng cảm gi&aacute;c mạnh mẽ, tự tin, c&aacute; t&iacute;nh v&agrave; thanh lịch.</span></span></span></p>\r\n', '<p><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\">Ch&uacute;ng t&ocirc;i cung cấp c&aacute;c loại gi&agrave;y đa dạng từ 100K đến 5000K để đ&aacute;p ứng mọi nhu cầu của kh&aacute;ch h&agrave;ng từ đơn giản đến phức tạp. H&atilde;y tham khảo Bảng gi&aacute; website &amp; Chức năng website để biết th&ecirc;m th&ocirc;ng tin về c&aacute;c g&oacute;i dịch vụ của ch&uacute;ng t&ocirc;i. SHOES SHOP đ&atilde; phục vụ hơn 1,000 kh&aacute;ch h&agrave;ng trong nước v&agrave; quốc tế. Rất h&acirc;n hạnh phục vụ Qu&yacute; kh&aacute;ch!</span></span></p>\r\n', '<p style=\"text-align:center\"><span style=\"color:#d35400\"><strong>CH&Agrave;O MỪNG BẠN ĐẾN VỚI SHOES SHOP</strong></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"color:#d35400\"><strong>SHOP B&Aacute;N GI&Agrave;Y ONLINE CHẤT LƯỢNG CAO TẠI VIỆT NAM</strong></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"color:#d35400\"><strong>Giới thiệu về shoes shop</strong></span></p>\r\n\r\n<p>Chuy&ecirc;n ph&acirc;n phối c&aacute;c loại gi&agrave;y cao cấp h&agrave;ng đầu tại việt nam.</p>\r\n\r\n<p>Tại SHOES SHOP&nbsp;&nbsp;kh&aacute;ch h&agrave;ng c&oacute; thể t&igrave;m th&ocirc;ng tin của tất cả c&aacute;c sản phẩm nhanh ch&oacute;ng, th&ocirc;ng tin kỹ thuật của sản phẩm được m&ocirc; tả đầy đủ, c&oacute; gi&aacute; cả r&otilde; r&agrave;ng.</p>\r\n\r\n<p>H&agrave;ng h&oacute;a v&agrave; nh&agrave; cung cấp được kiểm duyệt nhằm đảm bảo chất lượng, gi&aacute; cả canh tranh v&agrave; đ&aacute;p ứng nhanh nhu cầu của kh&aacute;ch h&agrave;ng.</p>\r\n\r\n<p><span style=\"color:#d35400\"><strong>Th&ocirc;ng tin li&ecirc;n hệ</strong></span></p>\r\n\r\n<p><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\">Shoes shop.</span></span></p>\r\n\r\n<p>K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh</p>\r\n\r\n<p>Thủ đức - Việt Nam</p>\r\n\r\n<p>Mobile: +84 966 746 080</p>\r\n\r\n<p>Email: 14520168@gm.uit.edu.vn</p>\r\n\r\n<p>&nbsp;</p>\r\n');
+(1, '<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"color:#000000\">Cung cấp ra thị trường rất nhiều sản phẩm gi&agrave;y chất lượng, mẫu m&atilde; đa dạng, style mới nhất... mang đến cho Qu&yacute; Kh&aacute;ch H&agrave;ng cảm gi&aacute;c mạnh mẽ, tự tin, c&aacute; t&iacute;nh v&agrave; thanh lịch.</span></span></span></p>\r\n', '<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Ch&uacute;ng t&ocirc;i cung cấp c&aacute;c loại gi&agrave;y đa dạng từ 100K đến 5000K để đ&aacute;p ứng mọi nhu cầu của kh&aacute;ch h&agrave;ng từ đơn giản đến phức tạp. H&atilde;y tham khảo Bảng gi&aacute; website &amp; Chức năng website để biết th&ecirc;m th&ocirc;ng tin về c&aacute;c g&oacute;i dịch vụ của ch&uacute;ng t&ocirc;i. SHOES SHOP đ&atilde; phục vụ hơn 1,000 kh&aacute;ch h&agrave;ng trong nước v&agrave; quốc tế. Rất h&acirc;n hạnh phục vụ Qu&yacute; kh&aacute;ch!</span></span></p>\r\n', '<p style=\"text-align:center\"><span style=\"color:#d35400\"><strong>CH&Agrave;O MỪNG BẠN ĐẾN VỚI SHOES SHOP</strong></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"color:#d35400\"><strong>SHOP B&Aacute;N GI&Agrave;Y ONLINE CHẤT LƯỢNG CAO TẠI VIỆT NAM</strong></span></p>\r\n\r\n<p style=\"text-align:center\">&nbsp;</p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"color:#d35400\"><strong>Giới thiệu về shoes shop</strong></span></span></p>\r\n\r\n<p><span style=\"font-size:14px\">Chuy&ecirc;n ph&acirc;n phối c&aacute;c loại gi&agrave;y cao cấp h&agrave;ng đầu tại việt nam.</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Tại SHOES SHOP&nbsp;&nbsp;kh&aacute;ch h&agrave;ng c&oacute; thể t&igrave;m th&ocirc;ng tin của tất cả c&aacute;c sản phẩm nhanh ch&oacute;ng, th&ocirc;ng tin kỹ thuật của sản phẩm được m&ocirc; tả đầy đủ, c&oacute; gi&aacute; cả r&otilde; r&agrave;ng.</span></p>\r\n\r\n<p><span style=\"font-size:14px\">H&agrave;ng h&oacute;a v&agrave; nh&agrave; cung cấp được kiểm duyệt nhằm đảm bảo chất lượng, gi&aacute; cả canh tranh v&agrave; đ&aacute;p ứng nhanh nhu cầu của kh&aacute;ch h&agrave;ng.</span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"color:#d35400\"><strong>Th&ocirc;ng tin li&ecirc;n hệ</strong></span></span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Shoes shop.</span></span></p>\r\n\r\n<p><span style=\"font-size:14px\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Thủ đức - Việt Nam</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Mobile: +84 966 746 080</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Email: 14520168@gm.uit.edu.vn</span></p>\r\n\r\n<p>&nbsp;</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -356,7 +358,7 @@ CREATE TABLE `thongtinlienhe` (
 --
 
 INSERT INTO `thongtinlienhe` (`id`, `noi_dung_thong_tin_lien_he`) VALUES
-(1, '<p><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh Thủ đức - Việt Nam</span></span></p>\r\n\r\n<p><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\">Mobile: +84 966 746 080</span></span></p>\r\n\r\n<p><span style=\"font-size:16px\"><span style=\"font-family:Courier New,Courier,monospace\">Email: 14520168@gm.uit.edu.vn</span></span></p>\r\n');
+(1, '<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh Thủ đức - Việt Nam</span></span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Mobile: +84 966 746 080</span></span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Email: 14520168@gm.uit.edu.vn</span></span></p>\r\n');
 
 --
 -- Indexes for dumped tables
@@ -441,7 +443,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT for table `gioithieu`
 --
