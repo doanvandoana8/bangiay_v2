@@ -62,11 +62,11 @@
 					//Chi cho phep cap nhap don hang o trang thai : dang_cho
 					while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
 						if ($row_tinh_trang['trang_thai']=='dang_cho'){
-							echo "<a href='#doithongtin' data-toggle='modal' style='margin-top: 0px;margin-bottom: 10px;width: 68%;margin-left: 47px;' class='btn btn-primary'  name='btn_cap_nhat_user' role='button'>Cập nhật thông tin(Người mua,người nhận)</a>";
+							echo "<a href='#doithongtin' data-toggle='modal' style='margin-top: 0px;margin-bottom: 10px;width: 68%;margin-left: 17px;' class='btn btn-primary'  name='btn_cap_nhat_user' role='button'>Cập nhật thông tin(Người mua,người nhận)</a>";
 							
 						}
 						else{
-							echo "<a disabled style='margin-top: 0px;margin-bottom: 10px;width: 68%;margin-left: 47px;' class='btn btn-primary'  name='btn_cap_nhat_user' role='button'>Cập nhật thông tin(Người mua,người nhận)</a>";
+							echo "<a disabled style='margin-top: 0px;margin-bottom: 10px;width: 68%;margin-left: 17px;' class='btn btn-primary'  name='btn_cap_nhat_user' role='button'>Cập nhật thông tin(Người mua,người nhận)</a>";
 						}
 	         		}
 				?>
