@@ -253,7 +253,7 @@ ul.sub-menu{
 }
 
 .companyinfo{
-	text-align: center;
+	text-align: left;
 }
 
 .footer-widget .col-sm-3{
@@ -423,7 +423,7 @@ ul.sub-menu{
 }
 
 .companyinfo h2, .companyinfo p{
-	text-align: center;
+	text-align: left;
 }
 
 .video-gallery{

@@ -1,10 +1,10 @@
 
 <div class="row">
-	<div class="col-sm-3">
+	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 		<?php require "blocks/leftsidebar.php"?>
 	</div>
 	
-	<div class="col-sm-9 padding-right">
+	<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 		<div class="features_items"><!--features_items-->
 			<h2 class="text-center" style="font-size: 22px;text-transform: uppercase;color: #fe980f;">
 			<?php
@@ -40,7 +40,7 @@
 				while ($row = mysql_fetch_array($result)) 
 				{	
 				?>
-					<div class="col-sm-3">
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 		<div class="product-image-wrapper">
 			<div class="single-products">
 				<div class="productinfo text-center">

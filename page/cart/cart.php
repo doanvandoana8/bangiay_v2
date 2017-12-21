@@ -34,12 +34,12 @@ if(isset($_POST['submit']))
 			</ol>
 		</div><!--/breadcrums-->
 		
-		<div class="col-sm-3">
+		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			<?php require "blocks/leftsidebar.php"?>
 		</div>
 		
 
-		<div class="col-sm-9">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 			<div class="review-payment" id="td_gh">
 				<h2 style="margin-bottom: -12px;">Giỏ hàng</h2>
 			</div>
@@ -173,21 +173,34 @@ else
 					</tbody> 
 				</table>
 			</div>
-			<div class="payment-options">
-				<a class="btn btn-primary pull-left" href="index.php">Tiếp tục mua hàng</a>
-				<input <a class="btn btn-primary pull-left" href="" value="Cập nhật" role="button" name="submit" type="submit"></a>
-				<?php 
-					if ($ok==2)
-					{
-						echo '<a class="btn btn-primary pull-right" role="button" href="index.php?p=thanhtoan-giohang" type="submit" name="btn_thanhtoan">Thanh toán</a>';
-					}
-					else{
-					
-						echo '<a class="btn btn-primary pull-right" disabled role="button" href="index.php?p=thanhtoan-giohang" type="submit" name="btn_thanhtoan">Thanh toán</a>';
-					}
-				?>
-			
-				<a class="btn btn-primary pull-right" href="index.php?p=delcart&id=0">Xóa bỏ giỏ hàng</a>
+			<div class="payment-options row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a style="width: 100%" class="btn btn-primary pull-left" href="index.php">Tiếp tục mua hàng</a>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<input <a style="width: 100%" class="btn btn-primary pull-left" href="" value=" Cập nhật" role="button" name="submit" type="submit"></a>
+					</div>
+						<?php 
+						if ($ok==2)
+						{
+							echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> <a  style="width: 100%" class="btn btn-primary pull-right" role="button" href="index.php?p=thanhtoan-giohang" type="submit" name="btn_thanhtoan">Thanh toán</a> </div>';
+						}
+						else{
+						
+							echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> <a  style="width: 100%" class="btn btn-primary pull-right" disabled role="button" href="index.php?p=thanhtoan-giohang" type="submit" name="btn_thanhtoan">Thanh toán</a> </div>';
+						}
+					?>
+					<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						<a style="width: 100%" class="btn btn-primary pull-right" href="index.php?p=delcart&id=0">Xóa bỏ giỏ hàng</a>
+					</div>
+
+				</div>
+				
+
+				
+
+				
 			</div>
 		</div>
 	</div>

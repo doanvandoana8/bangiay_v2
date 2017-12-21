@@ -1,9 +1,9 @@
-/* lg */ 
+/* lg 
 @media (min-width: 1200px) {
 
 }
 
-/* md */
+md
 @media (min-width: 992px) and (max-width: 1199px) {
  
  
@@ -35,7 +35,7 @@
 }
 
 
-/* sm */
+sm
 @media (min-width: 768px) and (max-width: 991px) {
    
 .shop-menu ul li a{
@@ -122,7 +122,7 @@
 
 }
 
-/* xs */
+xs
 @media (max-width: 767px) {
 
 .header_top .col-sm-6:first-child{
@@ -278,7 +278,7 @@ ul.sub-menu{
 
 }
 
-/* XS Portrait */
+XS Portrait
 @media (max-width: 480px) {
 
 .contactinfo{
@@ -524,4 +524,4 @@ ul.sub-menu{
 	float: none;
 }
 
-}
+} */

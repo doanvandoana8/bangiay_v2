@@ -59,29 +59,23 @@ if (isset($_POST['btn_khoiphuc']))
     {
       if (checkTaiKhoan($_POST['txtEmail']) ==1)
       {
-           //goi thu vien
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.smtp.php";
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.phpmailer.php";  
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/fcSendEmail.php"; 
+          //Email cần gới đển
+          $to = addslashes($_POST['txtEmail']);; 
 
-          $mTo = addslashes($_POST['txtEmail']); //mTo : dia chi nhan email
-          $emailroot=$mTo;
-          $title = 'Khôi phục mật khẩu';
-          $code=md5(mt_rand());
+          //Tiêu đề email
+          $subject = "Khôi phục mật khẩu"; 
 
-          mysql_query("UPDATE nguoidung SET code='$code' WHERE tai_khoan='$mTo'");
+           $code=md5(mt_rand());
+          //Nội dung email
+          $comment = "Xin chào ".$to." .Bạn vừa yêu cầu một mật khẩu mới tại SHOES SHOP, mã xác nhận của bạn là  ".$code;
 
+          $header = "From:google@gmail.com \r\n";
 
-          $content = "Xin chào ".$mTo." .Bạn vừa yêu cầu một mật khẩu mới tại SHOES SHOP, mã xác nhận của bạn là  ".$code;
-       
-
-          $nTo =$mTo;//nTo : Ten nguoi nhan email
-          $diachicc = 'doanvandoana8uit@gmail.com';
-          //test gui mail
-          $mail = sendMail($title, $content, $nTo, $mTo,$diachicc='');
-          if($mail==1)
-          {
-               echo "<script> alert('Một mã xác nhận vừa được gửi đến email của bạn. Bạn vui lòng kiểm tra email');</script>";
+          $send=mail($to, $subject, $comment, $header);
+          
+          if($send){
+              mysql_query("UPDATE nguoidung SET code='$code' WHERE tai_khoan='$to'");
+              echo "<script> alert('Một mã xác nhận vừa được gửi đến email của bạn. Bạn vui lòng kiểm tra email');</script>";
                echo "
                     <div class='col-xs-12 col-sm-12 col-md-12'>
                             <div class='form-group'>
@@ -89,13 +83,11 @@ if (isset($_POST['btn_khoiphuc']))
                             </div>
                     </div>
                ";
-          }
-          else {
-             echo "<script> alert('Lỗi, không thực hiện được');</script>";
+          }else{
+              echo "<script> alert('Lỗi, không thực hiện được');</script>";
               echo "<script> location.replace('index.php?p=dangnhap'); </script>";
           }
-
-
+          
       }
       else {
           echo "<script> alert('Tài khoản này không tồn tại, vui lòng kiểm tra lại.');</script>";

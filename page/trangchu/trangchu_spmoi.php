@@ -24,12 +24,12 @@ $result=SanPhamMoi($from,$sanpham_mottrang);
 while ($row = mysql_fetch_array($result)) 
 {	
 ?>
-	<div class="col-sm-3">
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 		<div class="product-image-wrapper">
 			<div class="single-products">
 				<div class="productinfo text-center">
 					<img src="images/sanpham/<?php echo $row['anh_san_pham']?>" class="img_product" alt="" />
-					<h4><?php echo $row['ten_san_pham']?></h4>
+					<h4><?php echo substr($row['ten_san_pham'],0,18);?>...</h4>
 					
 					<?php 
 						if ($row['san_pham_khuyen_mai']==1)

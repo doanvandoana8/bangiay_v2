@@ -3,7 +3,7 @@
 		<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> +(84) 966 999 999</a></li>
@@ -15,18 +15,17 @@
 					</div>
 				</div>
 			</div>
-		</div><!--/header_top-->
+</div><!--/header_top-->
 		
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div class="logo pull-left">
 							<a href="/bangiay_v2"><img src="images/home/logo.jpg" alt="" /></a>
-						</div>
-						
+						</div>	
 					</div>
-					<div class="col-sm-8">
+					<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav" >
 								
@@ -53,10 +52,7 @@
 									}
 								?>
 								
-								<!-- <li><a href="/bangiay_v2/nguoidung/index.php"><i class="fa fa-lock"></i> Người dùng</a></li>
-															
-															<li><a href="index.php?p=dangnhap"><i class="fa fa-lock"></i> Đăng nhập</a></li>
-															<li><a href="index.php?p=dangki"><i class="fa fa-lock"></i> Đăng kí</a></li> -->
+								
 								<?php 
 							       if (isset($_SESSION['username']) ){
 							       
@@ -93,16 +89,7 @@
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-7">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-
+					<div class="col-xs-12 col-sm-12 col-md-8">
 						<!--Menu trang chu-->
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
@@ -129,20 +116,20 @@
 							</ul>
 						</div>
 					</div>
-					<div class="row">
-					<form action="" method="get">
-					  <div class="col-sm-4">
-					   
-					      <input type="text"  name="ten" class="form-control" placeholder="Tìm kiếm theo tên...">
-
-					  </div><!-- /.col-lg-6 -->
-					  <div class="col-sm-1">
-					  	
-						<input  type="submit" value="Tìm kiếm" style="height: 33px;width: 87px;margin-left: -25px;"> 
-						<input type="hidden" name="p" value="timkiemten">
-					  </div>
-					</form>
-					</div><!-- /.row -->
+					<div class="col-xs-12 col-sm-12 col-md-4">
+						<form action="" method="get">
+						  <div class="col-xs-12 col-sm-8 col-md-8">
+						   
+						      <input type="text"  name="ten" class="form-control" placeholder="Tìm kiếm theo tên...">
+						
+						  </div>
+						  <div class="col-xs-12 col-sm-4 col-md-4">
+						  	
+							<input  type="submit" value="Tìm kiếm" style="height: 33px;width: 100%;"> 
+							<input type="hidden" name="p" value="timkiemten">
+						  </div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div><!--/header-bottom-->

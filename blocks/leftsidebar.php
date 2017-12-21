@@ -1,5 +1,6 @@
-<div class="row">
+
 	<div class="left-sidebar">
+					<div class="col-xs-12 col-sm-12">
 						<h2 style="margin-bottom: 7px;">Danh mục</h2>
 						 <div class="panel-group category-products" id="accordian">
 
@@ -19,9 +20,9 @@
 							}
 							?>
 						</div><!--/category-products-->
-					
+					</div>
 						
-						
+					<div class="col-xs-12 col-sm-12">
 						<div class="price-range"><!--price-range-->
 							<h2 style="margin-bottom: 7px;">Tìm theo giá</h2>
 							  
@@ -49,7 +50,9 @@
 								<input type="hidden" name="p" value="timkiemgia">
 							</form>  
 						</div><!--/price-range-->
+					</div>
 
+					<div class="col-xs-12 col-sm-12">
 						<div class="price-range"><!--price-range-->
 							<h2 style="margin-bottom: 7px;">Size</h2>
 							  
@@ -67,12 +70,9 @@
 								?>
 						
 						</div><!--/price-range-->
-
-					
-						
-		
+					</div>
 	</div>
-</div>
+
 
 
 								

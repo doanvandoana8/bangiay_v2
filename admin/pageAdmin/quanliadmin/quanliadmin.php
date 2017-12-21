@@ -223,14 +223,13 @@ if (isset($_POST['btn_xacnhan']))
 {
     if (isset($_POST['txtEmail']))
     {
-    	 //goi thu vien
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.smtp.php";
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.phpmailer.php";  
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/fcSendEmail.php"; 
+    	
 
-          $mTo = addslashes($_POST['txtEmail']); //mTo : dia chi nhan email
-          $emailroot=$mTo;
+          $To = addslashes($_POST['txtEmail']); //mTo : dia chi nhan email
+        
           $title = 'Cấp quyền quản trị viên';
+          $code=md5(mt_rand());
+          $header = "From:google@gmail.com \r\n";
          
 
           $test=checkTaiKhoanAdd($_POST['txtEmail']);
@@ -241,44 +240,42 @@ if (isset($_POST['btn_xacnhan']))
 
 	      if ($ok == 0)//neu nguoi dung chua co tai khoan thi tao moi
 	      {
-	          mysql_query("INSERT INTO `nguoidung` (`id_nguoi_dung`, `tai_khoan`, `ho_ten`, `anh_nguoi_dung`, `gioi_tinh`, `so_dien_thoai`, `mat_khau`, `level`, `dia_chi`, `code`) VALUES (NULL, '$mTo', '', '', '', '', '', 1, '', '$code')");
+	          mysql_query("INSERT INTO `nguoidung` (`id_nguoi_dung`, `tai_khoan`, `ho_ten`, `anh_nguoi_dung`, `gioi_tinh`, `so_dien_thoai`, `mat_khau`, `level`, `dia_chi`, `code`) VALUES (NULL, '$To', '', '', '', '', '', 1, '', '$code')");
 
-	          $content = "Xin chào ".$mTo." .Bạn vừa được cấp quyền quản trị viên tại SHOES-SHOP. Để tiến hàng đăng nhập bạn vui lòng sử dụng chức năng Quên mật khẩu của hệ thống để tạo mật khẩu mới(Lưu ý : tài khoản của bạn là tài khoản gmail mà bạn dùng để xin cấp quyền Quản trị viên) ";
+	          $content = "Xin chào ".$To." .Bạn vừa được cấp quyền quản trị viên tại SHOES-SHOP. Để tiến hàng đăng nhập bạn vui lòng sử dụng chức năng Quên mật khẩu của hệ thống để tạo mật khẩu mới(Lưu ý : tài khoản của bạn là tài khoản gmail mà bạn dùng để xin cấp quyền Quản trị viên) ";
 
 
-	          $nTo =$mTo;//nTo : Ten nguoi nhan email
-	          $diachicc = 'doanvandoana8uit@gmail.com';
+	           
+
 	          //test gui mail
-	          $mail = sendMail($title, $content, $nTo, $mTo,$diachicc='');
-	          if($mail==1)
+	     
+	          $send=mail($To, $title, $content, $header);
+	          if($send)
 	          {
 	               echo "<script> alert('Đã thêm quản trị viên mới thành công');</script>";
 	               echo'<meta http-equiv="refresh" content="0">';
 	              
 	          }
 	          else {
-	             echo "<script> alert('Lỗi, không thực hiện được');</script>";
+	             echo "<script> alert('Lỗi, không thành công');</script>";
 	             echo'<meta http-equiv="refresh" content="0">';
 	          }
 	      }
 	      else{//neu da co tai khoan thi cap nhat quyen
 	      	  mysql_query("UPDATE nguoidung SET level=1 WHERE tai_khoan='$mTo'");
 
-	      	  $content = "Xin chào ".$mTo." .Tài khoản của bạn vừa được cấp quyền quản trị viên tại SHOES-SHOP. Bạn có thể vào trang quản trị bằng Menu Quản trị viên được hiển thị ngay trên tên tài khoản của bạn";
+	      	  $content = "Xin chào ".$To." .Tài khoản của bạn vừa được cấp quyền quản trị viên tại SHOES-SHOP. Bạn có thể vào trang quản trị bằng Menu Quản trị viên được hiển thị ngay trên tên tài khoản của bạn";
 
-
-	          $nTo =$mTo;//nTo : Ten nguoi nhan email
-	          $diachicc = 'doanvandoana8uit@gmail.com';
 	          //test gui mail
-	          $mail = sendMail($title, $content, $nTo, $mTo,$diachicc='');
-	          if($mail==1)
+	          $send=mail($To, $title, $content, $header);
+	          if($send)
 	          {
 	               echo "<script> alert('Đã thêm quản trị viên mới thành công');</script>";
 	               echo'<meta http-equiv="refresh" content="0">';
 	              
 	          }
 	          else {
-	             echo "<script> alert('Lỗi, không thực hiện được');</script>";
+	             echo "<script> alert('Lỗi, không thể thực hiện được');</script>";
 	             echo'<meta http-equiv="refresh" content="0">';
 	          }
 	      }

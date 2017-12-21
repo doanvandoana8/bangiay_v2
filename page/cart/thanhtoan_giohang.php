@@ -29,11 +29,11 @@ if(isset($_POST['btn_capnhat']))
 				</ol>
 			</div><!--/breadcrums-->
 
-			<div class="col-sm-3">
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 				<?php require "blocks/leftsidebar.php"?>
 			</div>
 
-			<div class="col-sm-9">
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 				<div class="shopper-informations">
 					<div class="row">
 						<div class="col-sm-5" style="margin-left: 32px;">
@@ -229,25 +229,36 @@ if(isset($_POST['btn_capnhat']))
 								</table>
 							</div>
 							<div class="payment-options">
-								<a class="btn btn-primary pull-left" href="index.php">Tiếp tục mua hàng</a>
-								<input class="btn btn-primary pull-left" href="" value="Cập nhật"  name="btn_capnhat" type="submit">
 								
-								<?php 
-									if ($ok==2)
-									{
-										echo '<input  class="btn btn-primary pull-right" value="Thanh toán đơn hàng"  name="btn_thanhtoandonhang" type="submit">';
-									}
-									else{
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+										<a style="width: 100%" class="btn btn-primary pull-left" href="index.php">Tiếp tục mua hàng</a>
+									</div>
 									
-										echo '<input disabled class="btn btn-primary pull-right" value="Thanh toán đơn hàng" role="button" name="btn_thanhtoandonhang" type="submit">';
-									}
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+										<input style="width: 100%" class="btn btn-primary pull-left" href="" value="Cập nhật"  name="btn_capnhat" type="submit">
+									</div>
+									
+									
+									<?php 
+										if ($ok==2)
+										{
+											echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> <input  style="width: 100%" class="btn btn-primary pull-right" value="Thanh toán"  name="btn_thanhtoandonhang" type="submit"></div>';
+										}
+										else{
+										
+											echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> <input disabled style="width: 100%" class="btn btn-primary pull-right" value="Thanh toán" role="button" name="btn_thanhtoandonhang" type="submit"></div>';
+										}
 
-								?>
-								
-								
-								<a class="btn btn-primary pull-right" href="index.php?p=delcart&id=0">Xóa bỏ giỏ hàng</a>
+									?>
+									
+									<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+										<a style="width: 100%" class="btn btn-primary pull-right" href="index.php?p=delcart&id=0">Xóa bỏ giỏ hàng</a>
+									</div>
+									
 
-								</form>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>

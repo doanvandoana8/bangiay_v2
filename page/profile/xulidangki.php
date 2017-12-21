@@ -18,9 +18,12 @@ if (isset($_POST['btn_dangki']))
         $SDT   = addslashes($_POST['txtSDT']);
         $password1   = addslashes($_POST['txtPassword1']);
         $password2   = addslashes($_POST['txtPassword2']);
+    
+
         $len1=strlen($password1);
         $len2=strlen($password2);
-        if ($len1<6 || $len<6){
+        
+        if ($len1<6 || $len2<6){
             echo "<script> alert('Mật khẩu phải có ít nhất 6 kí tự.');</script>";
             echo "<script> location.replace('index.php?p=dangki'); </script>";
             exit;

@@ -19,20 +19,18 @@
 </script>
 
 <div class="row">
-	<div class="col-sm-3">
+	<div class="col-xs-12 col-sm-3">
 		<?php require "blocks/leftsidebar.php"?>
 	</div>
 	
-	<div class="col-sm-9 ">
+	<div class="col-xs-12 col-sm-9">
 		<div class="features_items"><!--features_items-->
 			<h2 class="title text-center">Sản phẩm mới</h2>
 			
 				<div id="trangchu_spmoi"></div>
-			
+		
 		</div><!--features_items-->
 		
-
-
 		<div class="">
 			<div id="trangsau">
 					Xem thêm
@@ -45,13 +43,10 @@
 <div>
 	<div class="features_items"><!--features_items-->
 		<div id="muanhieu"> Sản phẩm mua nhiều</div>
-
-
-
 		<!-- Swiper -->
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-
+		<div class="swiper-container row">
+			<div class="swiper-wrapper col-xs-12 col-sm-6 col-md-3">
+			
 			<?php
 				$ds_sp_muanhieu = dsSanPhamMuaNhieu();
 				while ($row = mysql_fetch_array($ds_sp_muanhieu)) 
@@ -59,10 +54,10 @@
 				
 			?>
 				<div class="swiper-slide" style="height: 248px;">
-					<div >
+				
 						<div class="product-image-wrapper" style="margin-bottom: 3px;">
 							<div class="single-products">
-								<div class="productinfo text-center" style="height: 250px;width: 203px;">
+								<div class="productinfo text-center" style="height: 250px;width: 100%;">
 									<img src="images/sanpham/<?php echo $row['anh_san_pham'];?>" class="img_product" alt="" />
 									<h4><?php echo $row['ten_san_pham'];?></h4>
 									<?php 
@@ -134,14 +129,15 @@
 							</div>
 							
 						</div>
-					</div>
+				
 				</div>
 
 			<?php	
 			}
 			?>
-
+		
 			</div>
+
 			
 			<!-- Add Pagination -->
 			<div class="swiper-pagination"></div>

@@ -2,7 +2,7 @@
 
 <div class="row">
         <!--/+link : nếu dẫn về trang chủ thi gắn link ban đầu vào-->
-       <div class="col-sm-12"><a class="btn icon-btn btn-primary pull-right" href="/bangiay_v2" id="tt_muasam"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> Tiếp tục mua hàng</a></div>
+       <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-md-offset-8 col-md-4 col-lg-offset-9 col-lg-3"><a class="btn icon-btn btn-primary pull-right" href="/bangiay_v2" id="tt_muasam" style="width: 100%"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> Tiếp tục mua hàng</a></div>
 
 
     <?php
@@ -11,7 +11,7 @@
       $donhang = dsDonHangNguoiDung($taikhoan);
       while ($row_donhang=mysql_fetch_array($donhang)) {
     ?>
-         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <div class="thumbnail">
             <div class="caption">
                 <div class='col-lg-12'>

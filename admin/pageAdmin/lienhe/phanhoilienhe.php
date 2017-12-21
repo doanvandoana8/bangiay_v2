@@ -65,35 +65,47 @@
 			echo "<script> alert('Nội dung phải hồi không được trống, kiểm tra lại.');</script>";
 		}
 		else{
-			 //goi thu vien
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.smtp.php";
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.phpmailer.php";  
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/fcSendEmail.php"; 
+			
 
           $mTo = addslashes($_POST['txtEmailKH']); //mTo : dia chi nhan email
-          
-          $emailroot=$mTo;
           $tenKH=$_POST['txtTenKH'];
           $title = 'SHOES SHOP Phản hồi liên hệ khách hàng';
           $id=$_GET['id'];
           $chudephanhoicuaKH=$_POST['txtChuDeKH'];
           $phanhoilaiKH=$_POST['NoiDungAD'];
           $phanhoicuaKH=$_POST['NoiDungKH'];
+          $br="<br>";
           
-          mysql_query("UPDATE lienhe SET phan_hoi_cho_khach_hang='$phanhoilaiKH' WHERE id_lien_he=$id");
 
-          $content = "Xin chào ".$tenKH." .Chúng tôi đã nhận được phản hồi của bạn. <br> Nội dung phản hồi của bạn như sau <br> Chủ đề : ".$chudephanhoicuaKH." <br>
-			Nội dung : ".$phanhoicuaKH." <br>
-			Chúng tôi xin trả lời bạn như sau : ".$phanhoilaiKH." <br>
+          $content = "			Xin chào ".$tenKH." .Chúng tôi đã nhận được phản hồi của bạn. Nội dung phản hồi của bạn như sau : 
+          		Chủ đề : ".$chudephanhoicuaKH." 	
+			Nội dung : ".$phanhoicuaKH." 		
+			Chúng tôi xin trả lời bạn như sau : ".$phanhoilaiKH." 
 			Cảm ơn bạn đã quan tâm!";
        
 
-          $nTo =$tenKH;//nTo : Ten nguoi nhan email
-          $diachicc = 'doanvandoana8uit@gmail.com';
-          //test gui mail
-          $mail = sendMail($title, $content, $nTo, $mTo,$diachicc='');
-          if($mail==1)
-          {
+          $nTo =$mTo;//nTo : Ten nguoi nhan email
+          
+
+           //Email cần gới đển
+          $to = $nTo; 
+
+          //Tiêu đề email
+          $subject = $title; 
+
+          //Nội dung email
+          $comment = $content;
+
+          $header = "From:google@gmail.com \r\n";
+
+          //gui mail
+          $send=mail($to, $subject, $comment, $header);
+
+          
+         
+          if($send)
+          {		
+          	   mysql_query("UPDATE lienhe SET phan_hoi_cho_khach_hang='$phanhoilaiKH' WHERE id_lien_he=$id");
                echo "<script> alert('Gửi phản hồi lại cho khách hàng thành công');</script>";
                echo "<script> location.replace('index.php?p=khachhanglienhe'); </script>";
               

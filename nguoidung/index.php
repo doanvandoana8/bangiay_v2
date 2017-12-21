@@ -66,16 +66,14 @@ else
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-xs-12 col-sm-4">
 					<?php 
 					require "blocks/leftnguoidung.php"
 					?>
 
-					
-
 				</div>
 
-				<div class="col-sm-9" style="padding-right: 0px;margin-bottom: 20px;margin-top: 10px;">
+				<div class="col-xs-12 col-sm-8" style="padding-right: 5px;margin-bottom: 20px;margin-top: 10px;">
 					<div class="panel-heading resume-heading" style="border: 1px solid;border-color: #428bca;">					
 						<?php 
 

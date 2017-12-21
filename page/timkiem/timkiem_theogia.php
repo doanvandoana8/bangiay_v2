@@ -1,8 +1,8 @@
-<div class="col-sm-3" style="margin-bottom: 100px">
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-bottom: 100px">
 		<?php require "blocks/leftsidebar.php"?>
 </div>
 
-<div class="col-sm-9">
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 		<h2 class="text-center" style="font-size: 22px;text-transform: uppercase;color: #fe980f;">Kết quả tìm kiếm</h2>
 		<?php
 			if ( isset($_GET['gia1']) )
@@ -28,12 +28,12 @@
 		{
 		?>
 			
-			<div class="col-sm-3">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 		<div class="product-image-wrapper">
 			<div class="single-products">
 				<div class="productinfo text-center">
 					<img src="images/sanpham/<?php echo $row['anh_san_pham']?>" class="img_product" alt="" />
-					<h4><?php echo $row['ten_san_pham']?></h4>
+					<h4><?php echo substr($row['ten_san_pham'],0,18);?>...</h4>
 					
 					<?php 
 						if ($row['san_pham_khuyen_mai']==1)

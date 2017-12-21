@@ -125,13 +125,36 @@ else
 	</footer><!--/Footer-->
 	
 	<script>
-		var swiper = new Swiper('.swiper-container', {
+		var x = screen.width;
+
+		if (x<=768){
+			var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
-			slidesPerView: 5,
+			slidesPerView: 1,
 			paginationClickable: true,
 			spaceBetween: 30,
 			freeMode: true
-		});
+			});
+		}
+		if (x>768 && x <= 991){
+			var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 2,
+			paginationClickable: true,
+			spaceBetween: 30,
+			freeMode: true
+			});
+		}
+		if (x>991){
+			var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 4,
+			paginationClickable: true,
+			spaceBetween: 30,
+			freeMode: true
+			});
+		}
+		
 	</script>
 	
 	<script src="js/jquery.js"></script>

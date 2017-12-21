@@ -10,33 +10,34 @@
     </div>
     <div class="panel-body">
           <div class="row">
-            <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="../images/avatar/<?php echo $row_tt_nguoidung['anh_nguoi_dung']?>" class="img-circle img-responsive"> 
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div align="center"> <img alt="User Pic" src="../images/avatar/<?php echo $row_tt_nguoidung['anh_nguoi_dung']?>" class="img-circle img-responsive"> 
 
-
-
-
-            <form action="" method="post" enctype="multipart/form-data">
-              <label id="nomal_lable">Ảnh đại diện </label>
-              <div class="input-group image-preview" style="margin-bottom: 10px;">
-                        <!-- <input type="text" class="form-control image-preview-filename" disabled="disabled"> don't give a name === doesn't send on POST/GET -->
-                        <span class="input-group-btn">
-                            <!-- image-preview-clear button -->
-                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                <span class="glyphicon glyphicon-remove"></span> Xóa
-                            </button>
-                            <!-- image-preview-input -->
-                            <div class="btn btn-default image-preview-input">
-                                <span class="glyphicon glyphicon-folder-open"></span>
-                                <span class="image-preview-input-title" id="nomal_lable">Chọn hình</span>
-                                <input required  type="file" accept="image/png, image/jpeg" name="hinhanh"/> <!-- rename it -->
-                            </div>
-                        </span>
-                </div><!-- /input-group image-preview [TO HERE]--> 
+              <form action="" method="post" enctype="multipart/form-data">
+                <label id="nomal_lable">Ảnh đại diện </label>
+                <div class="input-group image-preview" style="margin-bottom: 10px;">
+                          <!-- <input type="text" class="form-control image-preview-filename" disabled="disabled"> don't give a name === doesn't send on POST/GET -->
+                          <span class="input-group-btn">
+                              <!-- image-preview-clear button -->
+                              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                  <span class="glyphicon glyphicon-remove"></span> Xóa
+                              </button>
+                              <!-- image-preview-input -->
+                              <div class="btn btn-default image-preview-input">
+                                  <span class="glyphicon glyphicon-folder-open"></span>
+                                  <span class="image-preview-input-title" id="nomal_lable">Chọn hình</span>
+                                  <input required  type="file" accept="image/png, image/jpeg" name="hinhanh"/> <!-- rename it -->
+                              </div>
+                          </span>
+                  </div><!-- /input-group image-preview [TO HERE]--> 
+                </div>
               </div>
-              <button type="submit" name="btn_xacnhan" class="btn btn-warning pull-left"  style=" border-radius: 0px;width: 75%;">Cập nhật ảnh đại diện</button>
+              <div class="col-xs-12 col-sm-12 col-md-9">
+                <button type="submit" name="btn_xacnhan" class="btn btn-warning pull-left"  style=" border-radius: 0px;width: 100%;">Cập nhật ảnh đại diện</button>
+              </div>
             </form>
 
-            <div class=" col-md-9 col-lg-9 "> 
+            <div class="col-xs-12 col-sm-12 col-md-9"> 
                 <table class="table table-user-information">
                   <tbody>
 
