@@ -125,18 +125,10 @@ else
 	</footer><!--/Footer-->
 	
 	<script>
-		var x = screen.width;
 
+		var x = screen.width;
+	
 		if (x<=768){
-			var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			slidesPerView: 1,
-			paginationClickable: true,
-			spaceBetween: 30,
-			freeMode: true
-			});
-		}
-		if (x>768 && x <= 991){
 			var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
 			slidesPerView: 2,
@@ -145,7 +137,16 @@ else
 			freeMode: true
 			});
 		}
-		if (x>991){
+		if (x>768 && x <= 991){
+			var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 3,
+			paginationClickable: true,
+			spaceBetween: 30,
+			freeMode: true
+			});
+		}
+		if (x>991 && x <= 1190){
 			var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
 			slidesPerView: 4,
@@ -154,8 +155,17 @@ else
 			freeMode: true
 			});
 		}
+		if (x > 1190){
+			var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			slidesPerView: 5,
+			paginationClickable: true,
+			spaceBetween: 30,
+			freeMode: true
+			});
+		}
 		
-	</script>
+	</script> 
 	
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -95,21 +95,18 @@ else
       <div class="container">
 
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
             <?php 
             require "blocks/leftAdmin.php"
             ?>
 
 
-
           </div>
 
-          <div class="col-sm-9" style="padding-right: 0px;">
-            <div class="panel-heading resume-heading">          
+          <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">       
               <?php 
 
               switch($p){ 
-
 
                 case "danhsachloaisanpham"    : require "pageAdmin/loaisanpham/danhsachloaisanpham.php";break;
                 case "chitietloaisanpham"    : require "pageAdmin/loaisanpham/chitietloaisanpham.php";break;
@@ -143,9 +140,7 @@ else
                 case "donhandagiaodichchitiet"    : require "pageAdmin/quanlidonhang/dagiaodich/donhang_dagiaodich_chitiet.php";break;
 
 
-               
-
-
+              
                 case "binhluan"    : require "pageAdmin/quanlibinhluan/binhluan.php";break;
 
                 case "quanliuser"    : require "pageAdmin/quanlinguoidung/quanliuser.php";break;
@@ -173,7 +168,7 @@ else
               }
 
               ?>          
-            </div>
+          
           </div>  
         </div>
 
@@ -184,22 +179,8 @@ else
     <footer id="footer"><!--Footer-->
       <?php require "blocks/footer.php"; ?>
     </footer><!--/Footer-->
-
-
-
-
-
-
-
-    
-
     <script src="js/main.js"></script>
-
-
-
     <script src="js/adminlte.min.js"></script>
-
-
 
   </body>
   </html>

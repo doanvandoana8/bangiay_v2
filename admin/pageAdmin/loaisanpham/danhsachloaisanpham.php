@@ -17,11 +17,11 @@
       $loaisp=dsLoaiSP();
       while ($row_loaisp=mysql_fetch_array($loaisp)) {
       ?>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
           <div class="thumbnail" id="member">
             <div class="caption">
 
-              <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
+              <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
                 <h4>id #<?php echo $row_loaisp['id_loai_san_pham']?></h4>
               </div>
               <div class='col-lg-12' style="color: #696763;">

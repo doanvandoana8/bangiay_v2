@@ -8,19 +8,19 @@
 <link rel="stylesheet" href="css/danhsachloaisanpham.css">
   
 
-<div class="row">
-  
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
       <div class="thumbnail" id="member">
         <div class="caption">
 
-          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-            <h4>Người dùng</h4>
+          <div style="text-align: center;color: white;background-color: #FE980F;height: 30px">
+            <h3>Người dùng</h3>
           </div>
-          <div class='col-lg-12' style="color: #696763;">
-            <p style="text-align: center;font-size: 16px;">Tổng số người dùng</p> 
+          <div style="color: #696763;">
+            <p style="text-align: center;font-size: 16px;">Số người dùng</p> 
           </div>
-          <div class='col-lg-12' style="color: #696763;">
+          <div style="color: #696763;">
 
             <p style="text-align: center;font-size: 32px;"><?php
             $sl=soNguoiDung();
@@ -37,17 +37,17 @@
       </div>
     </div>
 
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
       <div class="thumbnail" id="member">
         <div class="caption">
 
-          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-            <h4>Bình luận</h4>
+          <div  style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+            <h3>Bình luận</h3>
           </div>
-          <div class='col-lg-12' style="color: #696763;">
-            <p style="text-align: center;font-size: 16px;">Tổng số bình luận</p> 
+          <div style="color: #696763;">
+            <p style="text-align: center;font-size: 16px;">Số bình luận</p> 
           </div>
-          <div class='col-lg-12' style="color: #696763;">
+          <div  style="color: #696763;">
             <p style="text-align: center;font-size: 32px;"><?php
             $sl=soBinhLuan();
             $number=mysql_fetch_assoc($sl);
@@ -63,17 +63,17 @@
       </div>
     </div>
 
-     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
       <div class="thumbnail" id="member">
         <div class="caption">
 
-          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-            <h4>Liên hệ</h4>
+          <div style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+            <h3 >Liên hệ</h3>
           </div>
-          <div class='col-lg-12' style="color: #696763;">
-            <p style="text-align: center;font-size: 16px;">Tổng số phản hồi</p> 
+          <div  style="color: #696763;">
+            <p style="text-align: center;font-size: 16px;">Số phản hồi</p> 
           </div>
-          <div class='col-lg-12' style="color: #696763;">
+          <div  style="color: #696763;">
             <p style="text-align: center;font-size: 32px;"><?php
             $slph=demPhanHoi();
             $numberph=mysql_fetch_assoc($slph);
@@ -90,17 +90,17 @@
     </div>
 
 
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	      <div class="thumbnail" id="member">
 	        <div class="caption">
 
-	          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-	            <h4>Đơn hàng</h4>
+	          <div  style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+	            <h3>Đơn hàng</h3>
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div style="color: #696763;">
 	            <p style="text-align: center;font-size: 16px;">Đang chờ</p> 
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 32px;"><?php
             $sl=soDonHangDC();
             $number=mysql_fetch_assoc($sl);
@@ -116,17 +116,17 @@
 	      </div>
     </div>
 
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	      <div class="thumbnail" id="member">
 	        <div class="caption">
 
-	          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-	            <h4>Đơn hàng</h4>
+	          <div  style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+	            <h3>Đơn hàng</h3>
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 16px;">Đã xử lí</p> 
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 32px;"><?php
             $sl=soDonHangDXL();
             $number=mysql_fetch_assoc($sl);
@@ -142,17 +142,17 @@
 	      </div>
     </div>
 
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	      <div class="thumbnail" id="member">
 	        <div class="caption">
 
-	          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-	            <h4>Đơn hàng</h4>
+	          <div  style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+	            <h3>Đơn hàng</h3>
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 16px;">Đã giao dịch</p> 
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 32px;"><?php
             $sl=soDonHangDGD();
             $number=mysql_fetch_assoc($sl);
@@ -168,17 +168,17 @@
 	      </div>
     </div>
 
-	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	      <div class="thumbnail" id="member">
 	        <div class="caption">
 
-	          <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-	            <h4>Admin</h4>
+	          <div  style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+	            <h3>Admin</h3>
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 16px;">Quản trị viên</p> 
 	          </div>
-	          <div class='col-lg-12' style="color: #696763;">
+	          <div  style="color: #696763;">
 	            <p style="text-align: center;font-size: 32px;"><?php
             $sl=soQuanTriVien();
             $number=mysql_fetch_assoc($sl);
@@ -210,17 +210,17 @@
 	while ($row_ds =mysql_fetch_array($ds)) {
 	?>
 
-	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 	  <div class="thumbnail" id="member">
 	    <div class="caption">
 
-	      <div class='col-lg-12 well well-add-card' style="text-align: center;color: white;background-color: #FE980F;">
-	        <h4>Sản phẩm</h4>
+	      <div  style="height: 30px;text-align: center;color: white;background-color: #FE980F;">
+	        <h3>Sản phẩm</h3>
 	      </div>
-	      <div class='col-lg-12' style="color: #696763;">
+	      <div  style="color: #696763;">
 	        <p style="text-align: center;font-size: 16px;"><?php echo $row_ds['ten_loai_san_pham']?></p> 
 	      </div>
-	      <div class='col-lg-12' style="color: #696763;">
+	      <div  style="color: #696763;">
 	        <p style="text-align: center;font-size: 32px;"><?php
             $sl=demSPLoaiSP($row_ds['id_loai_san_pham']);
             $number=mysql_fetch_assoc($sl);
@@ -239,4 +239,3 @@
 	}
 	?>
 	
-</div>

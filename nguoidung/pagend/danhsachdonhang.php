@@ -11,7 +11,7 @@
       $donhang = dsDonHangNguoiDung($taikhoan);
       while ($row_donhang=mysql_fetch_array($donhang)) {
     ?>
-         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
         <div class="thumbnail">
             <div class="caption">
                 <div class='col-lg-12'>

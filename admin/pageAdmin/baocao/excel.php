@@ -43,8 +43,8 @@ function changeTitle($str){
 }
   ?>
 
-<div class="col-sm-12" style="text-transform: uppercase; width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">
-      Báo cáo bán hàng <?php
+<div style="text-transform: uppercase; width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">
+      Bao cao ban hang <?php
          $thang=$_GET['thang'];
          $nam=$_GET['nam'];
          echo'(';
@@ -52,7 +52,8 @@ function changeTitle($str){
          echo $nam;echo')';
       ?>
   </div>
-<table  id="exTable" class="table table-bordered table-hover table-striped" >
+<div class="table-responsive">
+<table  id="exTable" class="table table-bordered table-hover table-striped">
   <thead>
     <tr id="tieude_ds_sp">
       <th id="baocao">ID</th>
@@ -78,7 +79,6 @@ function changeTitle($str){
    $tongdoanhthu=0;
    while ($row_ds=mysql_fetch_array($ds_nam)) {
   echo' <tr>
-
         <td id="baocao">';echo $row_ds['id_bao_cao'];echo'</td>
         <td id="baocao">';echo changeTitle($row_ds['ten_san_pham']);echo'</td>
         <td id="baocao">';echo $row_ds['ngay'];echo'</td>
@@ -103,6 +103,7 @@ function changeTitle($str){
   </tbody>
 
 </table>
+</div>
     
 <input style="border: 0px;width: 100%;background-color: #fe980f;color: white;font-size: 16px;" type="button" value="Xuất báo cáo" onclick="exportToExcel('exTable')" />
 

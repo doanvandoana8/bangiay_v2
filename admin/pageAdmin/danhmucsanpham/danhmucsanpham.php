@@ -19,7 +19,7 @@
 
 
  <div class="row" >
- 	<div class="col-sm-12" style="margin-top: 12px;padding-right: 0px;padding-left: 0px;">
+ 	<div class="col-sm-12 table-responsive" style="margin-top: 12px;padding-right: 0px;padding-left: 0px;">
  		<table class="table table-bordered table-hover table-striped">
  			<thead>
  				<tr >

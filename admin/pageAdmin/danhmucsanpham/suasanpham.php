@@ -97,14 +97,11 @@
 	?>
 
     </div>
-	<div class="col-lg-12">
-	
-		<div style="margin-bottom: 10px;">
-			
-			<button type="button"  id="btn_huy" OnClick="huy" class="btn btn-info" style=" margin-left: 10px; border-radius: 0px;width: 49%;">HỦY BỎ</button>
-			<button type="submit" name="btn_hoantat" class="btn btn-warning pull-right"  style=" border-radius: 0px;width: 49%;">HOÀN TẤT</button>
-		</div>
-
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<button type="button"  id="btn_huy" OnClick="huy" class="btn btn-info" style="  border-radius: 0px;width: 100%;margin-top: 5px;margin-bottom: 5px">HỦY BỎ</button>
+	</div>
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<button type="submit" name="btn_hoantat" class="btn btn-warning pull-right"  style=" border-radius: 0px;width: 100%;margin-top: 5px;margin-bottom: 5px">HOÀN TẤT</button>
 	 </div>
 </form>
 

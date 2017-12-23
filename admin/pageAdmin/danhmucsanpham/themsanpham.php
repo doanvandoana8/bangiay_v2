@@ -1,85 +1,75 @@
 
-<div class=row style="border: 1px solid;">
+<div class="row" style="border: 1px solid;">
 	<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">THÊM SẢN PHẨM MỚI</label>
-	<div class="col-lg-12" style="height: 31px;">
-		<div class="shopper-info" id="nguoimua" style="padding-top: 20px;text-align: center;padding-bottom: 0px;">
-		</div>
-	</div>
-<form action="" method="post" enctype="multipart/form-data">
-	<div class="col-lg-12">
-		<div class="col-sm-4">
-			<div class="shopper-info" id="themsp_lable">
-			
-					<div >Tên sản phẩm</div>
-					<input type="text" required name="txtTenSanPham" placeholder="Nhập tên sản phẩm." id="themsp">
-					<div >Loại sản phẩm</div>
-					<select id="themsp" name="opLoaiSP" style="margin-bottom: 10px;" class="form-control" name="th">
-					<?php
-					$dsloai = dsLoaiSPct();
-					while ($row_dsloai=mysql_fetch_array($dsloai)) {
-					?>
-						<option value="<?php echo $row_dsloai['id_loai_san_pham']?>"> <?php echo $row_dsloai['ten_loai_san_pham']?> </option>
-					<?php
-					}
-					?>
-                      
-                                            
-             		</select>
-             		<div >Trạng thái</div>
-             		<select id="themsp" name="opKinhDoanh" style="margin-bottom: 10px;" class="form-control" name="th">
-						<option value="0"> Chưa kinh doanh</option>
-                        <option value="1"> Kinh doanh</option>               
-             		</select>
-					<div >giá</div>
-					<input id="themsp" required type="text" name="txtGia" placeholder="Nhập giá sản phẩm" id="nomal_lable">
-          <div >Kích cỡ</div>
-					<input id="themsp"  required type="text" name="txtSize" placeholder="Nhập size sản phẩm" id="nomal_lable">
-          
-          <div >Số lượng</div>
-					<input id="themsp"  required type="text" name="txtSoLuong" placeholder="Nhập số lượng sản phẩm" id="nomal_lable">
-          
-         
-					<div class="input-group image-preview" style="margin-bottom: 10px;">
-                        <!-- <input type="text" class="form-control image-preview-filename" disabled="disabled"> don't give a name === doesn't send on POST/GET -->
-                        <span class="input-group-btn">
-                            <!-- image-preview-clear button -->
-                            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                <span class="glyphicon glyphicon-remove"></span> Xóa
-                            </button>
-                            <!-- image-preview-input -->
-                            <div class="btn btn-default image-preview-input">
-                                <span class="glyphicon glyphicon-folder-open"></span>
-                                <span class="image-preview-input-title" id="nomal_lable">Chọn hình</span>
-                                <input required  type="file" accept="image/png, image/jpeg" name="hinhanh"/> <!-- rename it -->
-                            </div>
-                        </span>
-                		</div><!-- /input-group image-preview [TO HERE]--> 
-              		
-				
-			</div>
-		</div>
-
-	<div class="col-sm-8">
-		<div class="shopper-info" id="themsp_lable">
-			<div style="font-weight: normal;color: #ffffff;text-align: center;text-transform: initial;background-color: #fe980f;">Thông tin sản phẩm </div>
-			<textarea name="thongtinsanpham" id="thongtinsanpham" ></textarea>
-			<script>CKEDITOR.replace('thongtinsanpham');</script>
-			
-		</div>
-	</div>
-
-    </div>
-	<div class="col-lg-12">
 	
-		<div style="margin-bottom: 10px;">
-			
-			<button type="button"  id="btn_huy" OnClick="huy" class="btn btn-info" style=" margin-left: 10px; border-radius: 0px;width: 49%;">HỦY BỎ</button>
-			<button type="submit" name="btn_hoantat" class="btn btn-warning pull-right"  style=" border-radius: 0px;width: 49%;">HOÀN TẤT</button>
-		</div>
+  <form action="" method="post" enctype="multipart/form-data">
+  		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  			<div class="shopper-info" id="themsp_lable">
+  			
+  					<div >Tên sản phẩm</div>
+  					<input type="text" required name="txtTenSanPham" placeholder="Nhập tên sản phẩm." id="themsp">
+  					<div >Loại sản phẩm</div>
+  					<select id="themsp" name="opLoaiSP" class="form-control" name="th">
+    					<?php
+    					$dsloai = dsLoaiSPct();
+    					while ($row_dsloai=mysql_fetch_array($dsloai)) {
+    					?>
+    						<option value="<?php echo $row_dsloai['id_loai_san_pham']?>"> <?php echo $row_dsloai['ten_loai_san_pham']?> </option>
+    					<?php
+    					}
+    					?>                                
+       		  </select>
 
-	 </div>
-</form>
+         		<div >Trạng thái</div>
+         		<select id="themsp" name="opKinhDoanh" class="form-control" name="th">
+  			          <option value="0"> Chưa kinh doanh</option>
+                  <option value="1"> Kinh doanh</option>               
+         		</select>
 
+  					<div >giá</div>
+  					<input id="themsp" required type="text" name="txtGia" placeholder="Nhập giá sản phẩm" id="nomal_lable">
+            <div >Kích cỡ</div>
+  					<input id="themsp"  required type="text" name="txtSize" placeholder="Nhập size sản phẩm" id="nomal_lable">
+            
+            <div >Số lượng</div>
+  					<input id="themsp"  required type="text" name="txtSoLuong" placeholder="Nhập số lượng sản phẩm" id="nomal_lable">
+            
+           
+  					<div class="input-group image-preview" style="margin-bottom: 10px;">
+                <span class="input-group-btn">
+                    <!-- image-preview-clear button -->
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        <span class="glyphicon glyphicon-remove"></span> Xóa
+                    </button>
+                    <!-- image-preview-input -->
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title" id="nomal_lable">Chọn hình</span>
+                        <input required  type="file" accept="image/png, image/jpeg" name="hinhanh"/> <!-- rename it -->
+                    </div>
+                </span>
+            </div>
+                		
+  			</div>
+  		</div>
+
+  	<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+  		<div class="shopper-info" id="themsp_lable">
+  			<div style="font-weight: normal;color: #ffffff;text-align: center;text-transform: initial;background-color: #fe980f;">Thông tin sản phẩm </div>
+  			<textarea name="thongtinsanpham" id="thongtinsanpham" ></textarea>
+  			<script>CKEDITOR.replace('thongtinsanpham');</script>
+  			
+  		</div>
+  	</div>
+
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <button type="button"  id="btn_huy" OnClick="huy" class="btn btn-info" style="  border-radius: 0px;width: 100%;margin-bottom: 5px;margin-top: 5px">HỦY BỎ</button>
+      </div>
+  			
+  		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <button type="submit" name="btn_hoantat" class="btn btn-warning pull-right"  style=" border-radius: 0px;width: 100%;margin-top: 5px">HOÀN TẤT</button>
+      </div>
+  </form>
 </div>
 
 <script>

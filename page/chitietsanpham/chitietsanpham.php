@@ -28,7 +28,7 @@
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 				<?php require "blocks/leftsidebar.php"?>
 			</div>
 
@@ -44,26 +44,21 @@
 			?>
 			<!--Lay ra idsp de phan trang binh luan cua san pham-->
 			<input type="hidden" id="idsp" value="<?php echo $id_san_pham;?>">
-			<div class="col-sm-9 padding-right">
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 padding-right">
 				<div class="product-details"><!--product-details-->
-					<div class="col-sm-5">
+					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
 						<div class="view-product">
-							<img src="images/sanpham/<?php echo $row_san_pham['anh_san_pham']?>" alt="" />
-							
+							<img src="images/sanpham/<?php echo $row_san_pham['anh_san_pham']?>" alt="" style="width: 80%"/>
 						</div>
 						
 
 					</div>
-					<div class="col-sm-7">
+					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-offset-1 col-lg-7">
 						<!--/product-information-->
-						<div class="row">
-							<h2><?php echo $row_san_pham['ten_san_pham']?> <?php
+						
+							<h2 style="margin-top: 70px"><?php echo $row_san_pham['ten_san_pham']?> <?php
 							if ($row_san_pham['san_pham_khuyen_mai'] ==1)
 								echo "(Hàng giảm giá)";?></h2>
-							
-							</div>
-
-							<div class="row">
 							
 									<?php 
 
@@ -89,19 +84,18 @@
 											echo"</span>";
 										}
 									?>
-							</div>
-							<div class="row">
+							
+							
 								<p>
+								<br>
 								<h4 style="color: #333333;">Kích cỡ : <?php echo $row_san_pham['size']?></h4>
 									
 								</p>
-							</div>
+						
 
 							<form action="" method=""> <!--Begin post sp-->
 							
-							<div class="row">
-								
-								
+							<div class="">
 								
 									<input type="hidden" name="p" value="giohang">
 									<input type="hidden" name="idSanPham" value="<?php echo $row_san_pham['id_san_pham']?>">
@@ -116,7 +110,7 @@
 							</div>
 							
 
-							<div class="row" style="margin-top: 5px;">
+							<div class="" style="margin-top: 5px;">
 								<p>	<b>Tình trạng: <?php
 									if ($row_san_pham['so_luong']<=0)
 										echo "Hết hàng";
@@ -166,19 +160,13 @@
 									Xem thêm
 								</div>
 								
-
-								
-
 							</div>
 							
 							
 							
 							<div class="tab-pane " id="nhanxet" >
 								<div class="col-sm-12"  style="padding-left: 24px;padding-right: 24px;">
-									
-									
-									
-									
+
 									<form action="" method="post">
 										
 										<textarea style="color: black;" name="noidungbl" id="binhluan" placeholder="Nhập bình luận của bạn." required ></textarea>

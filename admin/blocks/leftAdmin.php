@@ -3,7 +3,7 @@
 ?>
 
 <link href="css/chitietnguoidung.css" rel="stylesheet">
-<div class="container">
+<div class="">
   <div class="row">
     <?php
         //thong tin cua nguoi dung
@@ -34,9 +34,9 @@
       ?>
 
   </div>
-  <div class="row">
+  <div class="">
 
-    <div class="col-sm-3" style="text-transform: capitalize;">
+    <div class="" style="text-transform: capitalize;">
 
       <ul class="sidebar-menu tree" data-widget="tree" style="border: 3px solid #d9edf7;color: black;">
         <li > ADMIN</li>

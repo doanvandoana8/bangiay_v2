@@ -9,5 +9,5 @@ a:hover ,#a_off_tag_link {
 
 .bg-aqua, .callout.callout-info, .alert-info, .label-info, .modal-info .modal-body #ct_loai_sp{
     background-color: #97b353 !important;
-    height: 500px;
+    height:auto;
 }

@@ -1,68 +1,64 @@
 <?php
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/admin/function/quanlinguoidung/quanlinguoidung.php";
 ?>        
-<div class="row">
-	<div class="col-sm-12" style="margin-top: 57px;padding-right: 0px;padding-left: 0px;">
+
+<div class="col-sm-12">
 	<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">QUẢN LÍ NGƯỜI DÙNG</label>
 	<form action="" method="post">
-		<table class="table table-bordered table-hover table-striped">
-			<thead>
-				<tr id="tieude_ds_sp">
-					<th id="tieude" class="gridheader" style="text-align:center"><input id="check_all" type="checkbox" /></th>
-					<th id="tieude">#ID</th>
-					<th id="tieude">Tài khoản</th>
-					<th id="tieude">Họ tên</th>
-					<th id="tieude">Giới tính</th>
-					<th id="tieude">Số ĐT</th>
-					<th id="tieude">Level</th>
-					<th id="tieude">Địa chỉ</th>
-				
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr id="tieude_ds_sp">
+						<th id="tieude" class="gridheader" style="text-align:center"><input id="check_all" type="checkbox" /></th>
+						<th id="tieude">#ID</th>
+						<th id="tieude">Tài khoản</th>
+						<th id="tieude">Họ tên</th>
+						<th id="tieude">Giới tính</th>
+						<th id="tieude">Số ĐT</th>
+						<th id="tieude">Level</th>
+						<th id="tieude">Địa chỉ</th>
+					
 
-				</tr>
-			</thead>
-			<tbody>
-			<?php
-			$ds=layDSNguoiDung();
-			while ($row_ds=mysql_fetch_array($ds)) {
-			?>
+					</tr>
+				</thead>
 
-				<tr>
-					<td  id="tieude" align="center"><input class="checkitem" type="checkbox" name="id[]" value="<?php echo $row_ds['id_nguoi_dung'];?>" /></td>
-					<td id="tieude"><?php echo $row_ds['id_nguoi_dung'];?></td>
-					<td id="tieude"><?php echo $row_ds['tai_khoan'];?></td>
-					<td id="tieude"><?php echo $row_ds['ho_ten'];?></td>
+				<tbody>
 					<?php
-					if ($row_ds['gioi_tinh']==1)
-						echo'<td  id="tieude" style="text-align: center;">Nam</td>';
-					else
-						echo'<td  id="tieude" style="text-align: center;">Nữ</td>';
+					$ds=layDSNguoiDung();
+					while ($row_ds=mysql_fetch_array($ds)) {
 					?>
-					
-					<td id="tieude"><?php echo $row_ds['so_dien_thoai'];?></td>
-					<td id="tieude" style="text-align: center;"><?php echo $row_ds['level'];?></td>
-					<td id="tieude"><?php echo $row_ds['dia_chi'];?></td>
-					
-				</tr>
-			<?php
-			}
-			?>
-			
 
-			</tbody>
-			<tfoot>
-                <td colspan="5" style="padding-left: 0px">
-                    <button type="submit" class="btn" name="submmit" value="delete_all" style="display:none;color: white;background-color: #fe980f;"  OnClick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa mục đã chọn</button>
-                </td>
-            </tfoot>
+						<tr>
+							<td  id="tieude" align="center"><input class="checkitem" type="checkbox" name="id[]" value="<?php echo $row_ds['id_nguoi_dung'];?>" /></td>
+							<td id="tieude"><?php echo $row_ds['id_nguoi_dung'];?></td>
+							<td id="tieude"><?php echo $row_ds['tai_khoan'];?></td>
+							<td id="tieude"><?php echo $row_ds['ho_ten'];?></td>
+							<?php
+							if ($row_ds['gioi_tinh']==1)
+								echo'<td  id="tieude" style="text-align: center;">Nam</td>';
+							else
+								echo'<td  id="tieude" style="text-align: center;">Nữ</td>';
+							?>
+							
+							<td id="tieude"><?php echo $row_ds['so_dien_thoai'];?></td>
+							<td id="tieude" style="text-align: center;"><?php echo $row_ds['level'];?></td>
+							<td id="tieude"><?php echo $row_ds['dia_chi'];?></td>
+							
+						</tr>
+					<?php
+					}
+					?>
+				</tbody>
 
-		</table>
+				<tfoot>
+	                <td colspan="5" style="padding-left: 0px">
+	                    <button type="submit" class="btn" name="submmit" value="delete_all" style="display:none;color: white;background-color: #fe980f;"  OnClick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa mục đã chọn</button>
+	                </td>
+	            </tfoot>
+			</table>
+		</div>
 	</form>
-	</div>
 </div>
-
-
-
-
 
 
 <script type="text/javascript">

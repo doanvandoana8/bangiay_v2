@@ -60,21 +60,18 @@ else
 
 	</header><!--/header-->
 	
-
-	
-	
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 col-sm-4">
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 					<?php 
 					require "blocks/leftnguoidung.php"
 					?>
 
 				</div>
 
-				<div class="col-xs-12 col-sm-8" style="padding-right: 5px;margin-bottom: 20px;margin-top: 10px;">
-					<div class="panel-heading resume-heading" style="border: 1px solid;border-color: #428bca;">					
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" style="padding-right: 5px;margin-bottom: 20px;margin-top: 10px;">
+								
 						<?php 
 
 						switch($p){	
@@ -91,7 +88,7 @@ else
 						}
 						
 						?>					
-					</div>
+					
 				</div>	
 			</div>
 

@@ -119,7 +119,7 @@ if($ok == 2)
 		echo"	</td>";
 		echo"	<td class='cart_quantity' >";
 
-		echo"		<p align='right'><input type='number' style='width: 55%;
+		echo"		<p align='right'><input type='number' style='width: 45%;
     margin-right: 20px;' name='qty[$row[id]]' size='1' value='$soluong'> ";
 					
 		echo"	</td>";

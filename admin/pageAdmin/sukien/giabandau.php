@@ -14,9 +14,10 @@
 			$gia_bd=$row_gia['gia_ban_dau'];
 		}
 
-		echo '<label id="nomal_lable">Giá ban đầu </label>
-		<input style="height: 35px;" type="text"  name="txtGiaBD" readonly id="nomal_lable" value="';
+		echo '<label id="nomal_lable">Giá ban đầu(vnđ). </label>
+		<input style="height: 35px;width: 95%" type="text"  name="txtGiaBD" readonly id="nomal_lable" value="';
 		echo $gia_bd;echo'">';
+	
 	}
 	
 	

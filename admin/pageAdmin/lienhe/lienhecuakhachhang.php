@@ -2,14 +2,14 @@
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/admin/function/lienhe/lienhe.php";
 ?>
 <div class="row">
-	<div class="col-sm-12" style="background-color: #fe980f;color: #ffffff;text-align: center;text-transform: uppercase;font-size: 32px;">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: #fe980f;color: #ffffff;text-align: center;text-transform: uppercase;font-size: 32px;">
 		Liên hệ của khách hàng
 	</div>
 
 
 
 	<div class="row">
-		<div class="col-sm-12" style="margin-top: 10px;padding-right: 25px;padding-left: 25px;">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 table-responsive" style="margin-top: 10px;">
 			<table class="table table-bordered table-hover table-striped">
 				<thead>
 					<tr id="tieude_ds_sp">

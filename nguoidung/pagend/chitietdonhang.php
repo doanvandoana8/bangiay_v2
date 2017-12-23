@@ -1,6 +1,5 @@
 
 <section id="cart_items">
-	<div class="container">
 		<div class="shopper-informations">
 			<?php
 				if(isset($_SESSION['username']))
@@ -12,7 +11,7 @@
 				while ($row_tt_nguoimua_nguoinhan=mysql_fetch_array($tt_nguoimua_nguoinhan)) {
 			?>
 				
-					<div class="col-xs-12 col-sm-3" >
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" >
 						<div class="shopper-info" id="nguoimua" style="color: #696763;text-transform: capitalize;">
 							Thông tin của quý khách
 						
@@ -30,7 +29,7 @@
 							
 						</div>
 					</div>
-					<div class="col-xs-12 col-sm-offset-1 col-sm-3">
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 						<div class="shopper-info" id="nguoinhan" style="color: #696763;text-transform: capitalize;">
 							Địa chỉ giao & nhận hàng
 							
@@ -47,14 +46,14 @@
 							</form>
 							
 						</div>
-
 					</div>
+			
 				
 			<?php
 			}
 			?>
 		</div>
-		<div class="col-xs-12 col-sm-7">
+		<div class="col-xs-12 col-sm-12">
 					
 				
 				<?php 
@@ -71,207 +70,206 @@
 	         		}
 				?>
 		</div>
-		<div class="row">
-			<div class="col-xs-12 col-sm-7" style="padding-right: 35px">
-			<!--Begin form delete product from cart-->
-				<div class="review-payment">
-					<?php 
-						$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
-						while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
-						echo "<input type='hidden' name='trang_thai' value='";
-						echo $row_tinh_trang['trang_thai'];echo"'>";
-
-						if ($row_tinh_trang['trang_thai']=='dang_cho'){
-                            echo "<h2 style='text-align: center;' name='trangthai' value='";
-                      		echo $row_tinh_trang['trang_thai'];
-                      		echo "'>Trạng thái : Đang chờ</h2>";}
-                        if ($row_tinh_trang['trang_thai']=='da_xu_li'){
-                            echo "<h2 style='text-align: center;' name='trangthai' value='";
-                            echo $row_tinh_trang['trang_thai'];
-                            echo "'>Trạng thái : Đã xử lí</h2>";}
-                        if ($row_tinh_trang['trang_thai']=='da_giao_dich'){
-                            echo "<h2 style='text-align: center;' name='trangthai' value='";
-                            echo $row_tinh_trang['trang_thai'];
-                            echo "'>Trạng thái : Đã giao dịch</h2>";
-                        }
-                  
-                 		}
-					?>
-					<h2 >Thông tin đơn hàng</h2>
-					<div style=" text-align: left;">(Lưu ý : Bạn chỉ có thể cập nhật số lượng hay xóa sản phẩm cho đơn hàng đang ở trạng thái ĐANG CHỜ, bạn sẽ không thể cập nhật số lượng hay xóa sản phẩm không ở trạng thái này)</div>
-				</div>
-
-				<div class="table-responsive cart_info">
-					<table class="table table-condensed">
-						<thead>
-							<tr class="cart_menu" >
-								<td class="description" id="mn_anhsp" >Ảnh sản phẩm</td>
-								<td class="description" id="mn_tensp">Tên sản phẩm</td>
-								<td class="price" id="mn_dongia">Đơn giá</td>
-								<td class="quantity" id="mn_sl">Số lượng</td>
-								<td class="total" id="mn_thanhtien">Thành tiền</td>
-								<td class="total" id="mn_action">Action</td>
-								<td></td>
-							</tr>
-						</thead>
-						<tbody> <!--Mua ngay chỉ có duy nhất một sản phẩm (khi nhấn mua ngay)-->
-							<?php
-								$dh_sanpham = chitietDonHangNguoiDung($idDonHang);
-								while ($row_dh_sanpham=mysql_fetch_array($dh_sanpham)) {
-								
-							?>
-							
-							<tr>
-								<td class="cart_product" id="dh_anh">
-									<a href="" ><img class="dh_chitiet_anh" src="/bangiay_v2/images/sanpham/<?php echo $row_dh_sanpham['anh_san_pham']?>" alt=""></a>
-								</td>
-								<td class="cart_description" id="dh_mota">
-									<h4><a href="../index.php?p=chitietsanpham&idSanPham=<?php echo $row_dh_sanpham['id_san_pham']?>"><?php echo $row_dh_sanpham['ten_san_pham']?></a></h4>
-									
-								</td>
-								<td class="cart_price" id="dh_gia">
-
-									<?php 
-										$km=$row_dh_sanpham['san_pham_khuyen_mai'];
-										if($km==1){
-											echo "<p>";
-											echo number_format($row_dh_sanpham['gia_khuyen_mai']);
-											echo " đ</p>";
-										}
-										else{
-											echo "<p>";
-											echo number_format($row_dh_sanpham['gia_ban_dau']);
-											echo " đ</p>";
-										}
-									?>
-								
-								</td>
-								<td class="cart_quantity">
-									<div style="padding-left: 20px;" class="cart_quantity_button" id="mn_soluong">
-
-									<?php 
-										$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
-										while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
-											if ($row_tinh_trang['trang_thai']=='dang_cho'){
-
-												echo "<form action='' method='post'>
-												<input type='hidden' id='id_sp_sua' name='id_sp_sua' value='";
-												echo $row_dh_sanpham['id_san_pham'];echo "'>
-												<input class='cart_quantity_input' type='text' name='txt_so_luong_sp' value='";
-												echo $row_dh_sanpham['ctdh_so_luong'];echo"'autocomplete='off' size='2'>
-												<input type='submit' style='color: white;background-color: #fe980f;height: 28px;'' name='btn_so_luong_sp' value='Ok'>
-											</form>";
-											}
-											else{
-												echo "<form action='' method='post'>
-												<input type='hidden' id='id_sp_sua' name='id_sp_sua' value='";
-												echo $row_dh_sanpham['id_san_pham'];echo "'>
-												<input disabled class='cart_quantity_input' type='text' name='txt_so_luong_sp' value='";
-												echo $row_dh_sanpham['ctdh_so_luong'];echo"'autocomplete='off' size='2'>
-												<input disabled type='submit' style='color: white;background-color: #fe980f;height: 28px;'' name='btn_so_luong_sp' value='Ok'>
-											</form>";
-											}
-				                 		}
-									?>
-
-
-
-									
-									</div>
-								</td>
-								<td class="cart_total" id="dh_thanhtien">
-									<p class="cart_total_price"><?php echo number_format($row_dh_sanpham['thanh_tien'])?> đ</p>
-								</td>
-
-
-
-								<?php 
-										$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
-										while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
-											if ($row_tinh_trang['trang_thai']=='dang_cho'){
-											echo"<form action='' method='post'>
-												<td class='cart_delete_btn'>
-													<input ";
-											echo 'onclick="return confirm(';
-											echo "'Bạn chắc chắn xóa sản phẩm này?'";
-											echo ')"';
-											echo "type='submit' style='color: white;background-color: #fe980f;' name='btn_xoa_sp_dh' value='Xóa'>
-													<input type='hidden' id='id_sp_xoa' name='id_sp_xoa' value='";echo $row_dh_sanpham['id_san_pham'];echo"'>
-												</td>
-												</form>";
-												
-											}
-											else{
-												echo "<td class='cart_delete_btn'>
-													<input disabled type='submit' name='btn_xoa_sp_dh' value='Xóa'>
-												</td>";
-											}
-				                 		}
-									?>
-								
-								
-							</tr>
-							<?php
-							}
-							?>
-						
-							<tr>
-								<td colspan="3">&nbsp;</td>
-								<td colspan="3">
-									<table class="table table-condensed total-result">
-									<?php 
-										$tien_don_hang = donHang($idDonHang);
-										while ($row_tien_don_hang=mysql_fetch_array($tien_don_hang)) {	
-									?>
-										<tr>
-											<td>Tạm tính</td>
-											<td><?php echo number_format($row_tien_don_hang['tong_tien']-$row_tien_don_hang['thue_GTGT'])?> đ</td>
-										</tr>
-										<tr>
-											<td>Thuế GTGT(10%)</td>
-											<td><?php echo number_format($row_tien_don_hang['thue_GTGT'])?> đ</td>
-										</tr>
-										
-										<tr>
-											<td>Thành tiền</td>
-											<td><span><?php echo number_format($row_tien_don_hang['tong_tien'])?> đ</span></td>
-										</tr>
-									<?php
-									}
-									?>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="payment-options" style="margin-bottom: 0px">
-					<a class="btn btn-primary"  href="../index.php">Tiếp tục mua hàng</a>
-
-					<?php 
+	
+		<div class="col-xs-12 col-sm-12" style="padding-right: 35px">
+		<!--Begin form delete product from cart-->
+			<div class="review-payment">
+				<?php 
 					$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
-					//Chi cho phep cap nhap don hang o trang thai : dang_cho
 					while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
-						if ($row_tinh_trang['trang_thai']=='dang_cho'){
-							echo"<a";
-							echo ' onclick="return confirm(';echo "'Bạn chắc chắn xóa đơn hàng này?'";echo ')"';
-							echo "class='btn btn-primary pull-right'  href='index.php?p=huybodonhang&iddh=";
-							echo $idDonHang;echo"''>Hủy bỏ đơn hàng</a>";						
-						}
-						else{
-						echo"<a disabled class='btn btn-primary pull-right'  href=''>Hủy bỏ đơn hàng</a>";
-						}
+					echo "<input type='hidden' name='trang_thai' value='";
+					echo $row_tinh_trang['trang_thai'];echo"'>";
+
+					if ($row_tinh_trang['trang_thai']=='dang_cho'){
+	                    echo "<h2 style='text-align: center;' name='trangthai' value='";
+	              		echo $row_tinh_trang['trang_thai'];
+	              		echo "'>Trạng thái : Đang chờ</h2>";}
+	                if ($row_tinh_trang['trang_thai']=='da_xu_li'){
+	                    echo "<h2 style='text-align: center;' name='trangthai' value='";
+	                    echo $row_tinh_trang['trang_thai'];
+	                    echo "'>Trạng thái : Đã xử lí</h2>";}
+	                if ($row_tinh_trang['trang_thai']=='da_giao_dich'){
+	                    echo "<h2 style='text-align: center;' name='trangthai' value='";
+	                    echo $row_tinh_trang['trang_thai'];
+	                    echo "'>Trạng thái : Đã giao dịch</h2>";
+	                }
+	          
 	         		}
 				?>
-				
-				</div>
-				
+				<h2 >Thông tin đơn hàng</h2>
+				<div style=" text-align: left;">(Lưu ý : Bạn chỉ có thể cập nhật số lượng hay xóa sản phẩm cho đơn hàng đang ở trạng thái ĐANG CHỜ, bạn sẽ không thể cập nhật số lượng hay xóa sản phẩm không ở trạng thái này)</div>
 			</div>
-		</div>
 
-	</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu" >
+							<td class="description" id="mn_anhsp" >Ảnh sản phẩm</td>
+							<td class="description" id="mn_tensp">Tên sản phẩm</td>
+							<td class="price" id="mn_dongia">Đơn giá</td>
+							<td class="quantity" id="mn_sl">Số lượng</td>
+							<td class="total" id="mn_thanhtien">Thành tiền</td>
+							<td class="total" id="mn_action">Action</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody> <!--Mua ngay chỉ có duy nhất một sản phẩm (khi nhấn mua ngay)-->
+						<?php
+							$dh_sanpham = chitietDonHangNguoiDung($idDonHang);
+							while ($row_dh_sanpham=mysql_fetch_array($dh_sanpham)) {
+							
+						?>
+						
+						<tr>
+							<td class="cart_product" id="dh_anh">
+								<a href="" ><img class="dh_chitiet_anh" src="/bangiay_v2/images/sanpham/<?php echo $row_dh_sanpham['anh_san_pham']?>" alt=""></a>
+							</td>
+							<td class="cart_description" id="dh_mota">
+								<h4><a href="../index.php?p=chitietsanpham&idSanPham=<?php echo $row_dh_sanpham['id_san_pham']?>"><?php echo $row_dh_sanpham['ten_san_pham']?></a></h4>
+								
+							</td>
+							<td class="cart_price" id="dh_gia">
+
+								<?php 
+									$km=$row_dh_sanpham['san_pham_khuyen_mai'];
+									if($km==1){
+										echo "<p>";
+										echo number_format($row_dh_sanpham['gia_khuyen_mai']);
+										echo " đ</p>";
+									}
+									else{
+										echo "<p>";
+										echo number_format($row_dh_sanpham['gia_ban_dau']);
+										echo " đ</p>";
+									}
+								?>
+							
+							</td>
+							<td class="cart_quantity">
+								<div style="padding-left: 20px;" class="cart_quantity_button" id="mn_soluong">
+
+								<?php 
+									$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
+									while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
+										if ($row_tinh_trang['trang_thai']=='dang_cho'){
+
+											echo "<form action='' method='post'>
+											<input type='hidden' id='id_sp_sua' name='id_sp_sua' value='";
+											echo $row_dh_sanpham['id_san_pham'];echo "'>
+											<input class='cart_quantity_input' type='text' name='txt_so_luong_sp' value='";
+											echo $row_dh_sanpham['ctdh_so_luong'];echo"'autocomplete='off' size='2'>
+											<input type='submit' style='color: white;background-color: #fe980f;height: 28px;'' name='btn_so_luong_sp' value='Ok'>
+										</form>";
+										}
+										else{
+											echo "<form action='' method='post'>
+											<input type='hidden' id='id_sp_sua' name='id_sp_sua' value='";
+											echo $row_dh_sanpham['id_san_pham'];echo "'>
+											<input disabled class='cart_quantity_input' type='text' name='txt_so_luong_sp' value='";
+											echo $row_dh_sanpham['ctdh_so_luong'];echo"'autocomplete='off' size='2'>
+											<input disabled type='submit' style='color: white;background-color: #fe980f;height: 28px;'' name='btn_so_luong_sp' value='Ok'>
+										</form>";
+										}
+			                 		}
+								?>
+
+
+
+								
+								</div>
+							</td>
+							<td class="cart_total" id="dh_thanhtien">
+								<p class="cart_total_price"><?php echo number_format($row_dh_sanpham['thanh_tien'])?> đ</p>
+							</td>
+
+
+
+							<?php 
+									$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
+									while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
+										if ($row_tinh_trang['trang_thai']=='dang_cho'){
+										echo"<form action='' method='post'>
+											<td class='cart_delete_btn'>
+												<input ";
+										echo 'onclick="return confirm(';
+										echo "'Bạn chắc chắn xóa sản phẩm này?'";
+										echo ')"';
+										echo "type='submit' style='color: white;background-color: #fe980f;' name='btn_xoa_sp_dh' value='Xóa'>
+												<input type='hidden' id='id_sp_xoa' name='id_sp_xoa' value='";echo $row_dh_sanpham['id_san_pham'];echo"'>
+											</td>
+											</form>";
+											
+										}
+										else{
+											echo "<td class='cart_delete_btn'>
+												<input disabled type='submit' name='btn_xoa_sp_dh' value='Xóa'>
+											</td>";
+										}
+			                 		}
+								?>
+							
+							
+						</tr>
+						<?php
+						}
+						?>
+					
+						<tr>
+							<td colspan="3">&nbsp;</td>
+							<td colspan="3">
+								<table class="table table-condensed total-result">
+								<?php 
+									$tien_don_hang = donHang($idDonHang);
+									while ($row_tien_don_hang=mysql_fetch_array($tien_don_hang)) {	
+								?>
+									<tr>
+										<td>Tạm tính</td>
+										<td><?php echo number_format($row_tien_don_hang['tong_tien']-$row_tien_don_hang['thue_GTGT'])?> đ</td>
+									</tr>
+									<tr>
+										<td>Thuế GTGT(10%)</td>
+										<td><?php echo number_format($row_tien_don_hang['thue_GTGT'])?> đ</td>
+									</tr>
+									
+									<tr>
+										<td>Thành tiền</td>
+										<td><span><?php echo number_format($row_tien_don_hang['tong_tien'])?> đ</span></td>
+									</tr>
+								<?php
+								}
+								?>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="payment-options" style="margin-bottom: 0px">
+				<a class="btn btn-primary"  href="../index.php">Tiếp tục mua hàng</a>
+
+				<?php 
+				$tinh_trang = trangthaiDonHang($taikhoan,$idDonHang);
+				//Chi cho phep cap nhap don hang o trang thai : dang_cho
+				while ($row_tinh_trang = mysql_fetch_array($tinh_trang)) {
+					if ($row_tinh_trang['trang_thai']=='dang_cho'){
+						echo"<a";
+						echo ' onclick="return confirm(';echo "'Bạn chắc chắn xóa đơn hàng này?'";echo ')"';
+						echo "class='btn btn-primary pull-right'  href='index.php?p=huybodonhang&iddh=";
+						echo $idDonHang;echo"''>Hủy bỏ đơn hàng</a>";						
+					}
+					else{
+					echo"<a disabled class='btn btn-primary pull-right'  href=''>Hủy bỏ đơn hàng</a>";
+					}
+	     		}
+			?>
+			
+			</div>
+			
+		</div>
+	
 
 </section> <!--/#cart_items-->
+
 
 <!--Form thay doi thong tin mua, nhan-->
 <form action="" method="post">

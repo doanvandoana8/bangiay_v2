@@ -1,10 +1,11 @@
 <?php
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/admin/function/quanlibinhluan/quanlibinhluan.php";
 ?>
-<div class="row">
+
 <div class="col-sm-12" style="margin-top: 57px;padding-right: 0px;padding-left: 0px;">
-		<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">QUẢN LÍ BÌNH LUẬN</label>
-		<form action="" method="post">
+	<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">QUẢN LÍ BÌNH LUẬN</label>
+	<form action="" method="post">
+    <div class="table-responsive">
  		<table class="table table-bordered table-hover table-striped">
  			<thead>
  				<tr id="tieude_ds_sp">
@@ -18,38 +19,38 @@
  					<th id="tieude">Ngày tạo</th>
  				</tr>
  			</thead>
+
  			<tbody>
+    			<?php
+    			$ds=layDSBinhLuan();
+    			while ($row_ds=mysql_fetch_array($ds)) {
+    			?>
 
-			<?php
-			$ds=layDSBinhLuan();
-			while ($row_ds=mysql_fetch_array($ds)) {
-			?>
-
- 				<tr>
- 					<td  id="tieude" align="center"><input class="checkitem" type="checkbox" name="id[]" value="<?php echo $row_ds['id_binh_luan'];?>" /></td>
- 					<td id="tieude"><?php echo $row_ds['id_binh_luan'];?></td>
- 					<td id="tieude"><?php echo $row_ds['id_san_pham'];?></td>
- 					<td id="tieude"><?php echo $row_ds['ten_san_pham'];?></td>
- 					<td id="tieude"><?php echo $row_ds['tai_khoan'];?></td>
- 					<td id="tieude"><?php echo $row_ds['noi_dung_binh_luan'];?></td>
- 					<td id="tieude"><?php echo $row_ds['thoi_gian_tao'];?></td>
-					<td id="tieude"><?php echo $row_ds['ngay_tao'];?></td>
- 				</tr>
-			<?php
-			}
-			?>
-
+     				<tr>
+     					<td  id="tieude" align="center"><input class="checkitem" type="checkbox" name="id[]" value="<?php echo $row_ds['id_binh_luan'];?>" /></td>
+     					<td id="tieude"><?php echo $row_ds['id_binh_luan'];?></td>
+     					<td id="tieude"><?php echo $row_ds['id_san_pham'];?></td>
+     					<td id="tieude"><?php echo $row_ds['ten_san_pham'];?></td>
+     					<td id="tieude"><?php echo $row_ds['tai_khoan'];?></td>
+     					<td id="tieude"><?php echo $row_ds['noi_dung_binh_luan'];?></td>
+     					<td id="tieude"><?php echo $row_ds['thoi_gian_tao'];?></td>
+    					<td id="tieude"><?php echo $row_ds['ngay_tao'];?></td>
+     				</tr>
+    			<?php
+    			}
+    			?>
  			</tbody>
+
 			<tfoot>
-		
                 <td colspan="5">
                     <button type="submit" class="btn" name="submmit" value="delete_all" style="display:none;color: white;background-color: #fe980f;"  OnClick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa mục đã chọn</button>
                 </td>
             </tfoot>
  		</table>
- 		</form>
- 	</div>
- </div>
+    </div>
+		</form>
+	</div>
+
 
  
 

@@ -16,29 +16,29 @@
 		{
 		?>
 			
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 		<div class="product-image-wrapper">
 			<div class="single-products">
 				<div class="productinfo text-center">
-					<img src="images/sanpham/<?php echo $row['anh_san_pham']?>" class="img_product" alt="" />
+					<img src="images/sanpham/<?php echo $row['anh_san_pham']?>" class="img_product" alt="" style="width: 95%"/>
 					<h4><?php echo substr($row['ten_san_pham'],0,18);?>...</h4>
 					
 					<?php 
 						if ($row['san_pham_khuyen_mai']==1)
 						{
-							echo "<h5><div style='float: left;text-decoration: line-through;'>Giá gốc";
+							echo "<h5><div style='float: left;text-decoration: line-through;'>";
 							echo number_format($row['gia_ban_dau']);
 						
-							echo "đ</div><div style='float:right'>Giá KM";
+							echo "đ</div><div style='float:right'>";
 							echo number_format($row['gia_khuyen_mai']);
 							echo "đ</div></h5>";
 						}
 						else
 						{
-							echo "<h5><div style='float: left;'>Giá gốc";
+							echo "<h5><div style='float: left;'>";
 							echo number_format($row['gia_ban_dau']);
 
-							echo "đ</div><div style='text-decoration: line-through;float:right;'>Giá KM";
+							echo "đ</div><div style='text-decoration: line-through;float:right;'>";
 							echo number_format($row['gia_khuyen_mai']);
 							echo "đ</div></h5>";
 						}
@@ -57,19 +57,19 @@
 						<?php 
 						if ($row['san_pham_khuyen_mai']==1)
 						{
-							echo "<h5 style='height: 20px;'><div style='float: left;text-decoration: line-through;'>Giá gốc ";
+							echo "<h5 style='height: 20px;'><div style='float: left;text-decoration: line-through;'>";
 							echo number_format($row['gia_ban_dau']);
 						
-							echo "đ</div><div style='float:right'>Giá KM ";
+							echo "đ</div><div style='float:right'>";
 							echo number_format($row['gia_khuyen_mai']);
 							echo "đ</div></h5>";
 						}
 						else
 						{
-							echo "<h5 style='height: 20px;'><div style='float: left;'>Giá gốc ";
+							echo "<h5 style='height: 20px;'><div style='float: left;'>";
 							echo number_format($row['gia_ban_dau']);
 
-							echo "đ</div><div style='text-decoration: line-through;float:right;'>Giá KM ";
+							echo "đ</div><div style='text-decoration: line-through;float:right;'>";
 							echo number_format($row['gia_khuyen_mai']);
 							echo "đ</div></h5>";
 						}

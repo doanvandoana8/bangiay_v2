@@ -1,48 +1,41 @@
  <?php
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/admin/function/sukien/giamgia.php";
 ?>
- <div class="row">
- 	<!--/+link : nếu dẫn về trang chủ thi gắn link ban đầu vào-->
- 	<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">GIẢM GIÁ</label>
- 	<div class="col-sm-12"><a class="btn icon-btn btn-primary pull-right" href="#sukiengiamgiathem" data-toggle="modal" style="
- 		margin-right: -14px;
- 		"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> Giảm giá cho sản phẩm khác</a>
 
- 	</div>
+<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;margin-top: 10px">GIẢM GIÁ</label>
+<div><a class="btn icon-btn btn-primary" href="#sukiengiamgiathem" data-toggle="modal"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle" ></span> Giảm giá cho sản phẩm khác</a>
 
- </div>
+</div>
 
+<div class="table-responsive" style="margin-top: 10px">
+	<table class="table table-bordered table-hover table-striped">
+		<thead>
+			<tr id="tieude_ds_sp">
+				<th id="tieude">ID</th>
+				<th id="tieude">Tên SP</th>
+				<th id="tieude">Loại SP</th>
+				<th id="tieude">Ảnh SP</th>
+				<th id="tieude">Thông tin</th>					
+				<th id="tieude">Trạng thái</th>
+				<th id="tieude">Giá BĐ</th>
+				<th id="tieude">Giá KM</th>		
+				<th id="tieude">Action</th>
 
- <div class="row" >
- 	<div class="col-sm-12" style="margin-top: 12px;padding-right: 0px;padding-left: 0px;">
- 		<table class="table table-bordered table-hover table-striped">
- 			<thead>
- 				<tr id="tieude_ds_sp">
- 					<th id="tieude">ID</th>
- 					<th id="tieude">Tên SP</th>
- 					<th id="tieude">Loại SP</th>
- 					<th id="tieude">Ảnh SP</th>
- 					<th id="tieude">Thông tin</th>					
- 					<th id="tieude">Trạng thái</th>
- 					<th id="tieude">Giá BĐ</th>
- 					<th id="tieude">Giá KM</th>		
- 					<th id="tieude">Action</th>
-
- 				</tr>
- 			</thead>
- 			<tbody>
+			</tr>
+		</thead>
+		<tbody>
 			<?php
 			$ds=layDSGiamGia();
 			while ($row_ds=mysql_fetch_array($ds)) {
 			?>
- 				<tr>
- 					<td id="tieude"><?php echo $row_ds['id_san_pham'];?></td>
- 					<td id="tieude"><?php echo $row_ds['ten_san_pham'];?></td>
- 					<td id="tieude"><?php echo $row_ds['ten_loai_san_pham'];?></td>
- 					<td id="tieude"><img class="imglist" src="/bangiay_v2/images/sanpham/<?php echo $row_ds['anh_san_pham'];?>" style="
- 						width: 149px;
- 						height: 150px;
- 						"></td>
+					<tr>
+						<td id="tieude"><?php echo $row_ds['id_san_pham'];?></td>
+						<td id="tieude"><?php echo $row_ds['ten_san_pham'];?></td>
+						<td id="tieude"><?php echo $row_ds['ten_loai_san_pham'];?></td>
+						<td id="tieude"><img class="imglist" src="/bangiay_v2/images/sanpham/<?php echo $row_ds['anh_san_pham'];?>" style="
+							width: 149px;
+							height: 150px;
+							"></td>
 					<td id="tieude"><?php echo $row_ds['thong_tin'];?></td>
 					<?php
 						if ($row_ds['kinh_doanh']==1)
@@ -66,89 +59,75 @@
 						<button id="btn_chitiet" name="btn_xoa" type="submit" class="btn btn-sm btn-info" onclick="return confirm('Bạn có muốn xóa sản phẩm này khỏi danh sách giảm giá hay không?')"> Xóa </button>
 						</form>
 					</td>
- 				</tr>
+					</tr>
 			<?php
 			}
 			?>
- 			</tbody>
- 		</table>
- 	</div>
- </div>
+		</tbody>
+	</table>
+</div>
 
-
-
-
- 
 
 
 <div class="modal fade" id="sukiengiamgiathem">
    <div class="modal-dialog">
       <div class="modal-content">
-         <div class="modal-header" style="background-color: red;">
+        <div class="modal-header" style="background-color: red;">
             <button type="button" class="close" data-dismiss='modal' aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
             <h4 class="modal-title"  style="text-align: center;font-size: 32px;padding: 12px;color: #fff;"> GIẢM GIÁ CHO SẢN PHẨM MỚI</h4>
-         </div>
+        </div>
 	<form action="" method="post">
-         <div class="modal-body">
+        <div class="modal-body">
             <div class="container-fluid">
-               <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-						<div class="col-xs-4">
-							<div class="form-group">
-		                        <div class="input-group">
-		                        	<label id="nomal_lable">ID sản phẩm </label>
-		                        	<select style="height: 35px;margin-bottom: 10px;" class="form-control" name="idSanPham" id="idsp" >
-		                        	<option value="-1">#ID Sản phẩm</option>
-		                        	<?php
-		                        	$ds_sp_chuaKM=layDSSPChuaKM();
-		                        	while ($row_ds_sp_chuaKM=mysql_fetch_array($ds_sp_chuaKM)) {
-		                        	?>
-								
-		                              <option value="<?php echo $row_ds_sp_chuaKM['id_san_pham']?>"> <?php echo $row_ds_sp_chuaKM['id_san_pham']?></option>
-		                              
-		                            <?php
-		                        	}
-		                        	?>                     
-		                     		</select>
-		                        </div>
-		                     </div>
-						</div>
+				<div class="col-xs-12 col-sm-12 col-md-3">
+					<div class="form-group" >                     
+                        	<label id="nomal_lable">ID sản phẩm </label>
+                        	<select style="margin-bottom: 10px;width: 80%" class="form-control" name="idSanPham" id="idsp" >
+                        	<option value="-1" disabled="disabled" selected="selected">#ID</option>
+                        	<?php
+                        	$ds_sp_chuaKM=layDSSPChuaKM();
+                        	while ($row_ds_sp_chuaKM=mysql_fetch_array($ds_sp_chuaKM)) {
+                        	?>
+						
+                              <option value="<?php echo $row_ds_sp_chuaKM['id_san_pham']?>"> <?php echo $row_ds_sp_chuaKM['id_san_pham']?></option>
+                              
+                            <?php
+                        	}
+                        	?>                     
+                     		</select>                     
+                     </div>
+				</div>
 
+				<div class="col-xs-12 col-sm-12 col-md-4">
+					<div class="form-group">                        
+                           <div id="giabandau"></div>
+                     </div>
+				</div>
 
-						<div class="col-xs-4">
-							<div class="form-group">
-		                        <div class="input-group">		                        
-		                           <div id="giabandau"></div>
-		                        </div>
-		                     </div>
-						</div>
-
-
-						<div class="col-xs-4">
-							<div class="form-group">
-		                        <div class="input-group">
-	                        		<label id="nomal_lable">Giá khuyến mãi </label>
-									<input  style="height: 35px;type=text" placeholder="Nhập giá khuyến mãi."  id="nomal_lable" name="txtGiaKM">
-		                        </div>
-		                     </div>
-						</div>
-	                     
-
-                  </div>
-                 <div style="font-weight: bold;"> Hãy tham khảo Danh Mục Sản Phẩm để biết rõ hơn về ID của sản phẩm. (Danh Mục Sản Phẩm/Chọn loại sản phẩm).</div>
-               </div>
-
-               
+				<div class="col-xs-12 col-sm-12 col-md-4">
+					<div class="form-group">                 
+                    		<label id="nomal_lable">Giá khuyến mãi(vnđ) </label>
+							<input  style="height: 35px;width: 95%" type="number" placeholder="Nhập giá khuyến mãi."  id="nomal_lable" name="txtGiaKM">            
+                     </div>
+				</div>
+             
+                <div class="col-xs-12 col-sm-12 col-md-12" style="font-weight: bold;"> Hãy tham khảo Danh Mục Sản Phẩm để biết rõ hơn về ID của sản phẩm. (Danh Mục Sản Phẩm/Chọn loại sản phẩm).</div>
+   
             </div>
-         </div>
+        </div>
 
-         <div class="modal-footer">
+        <div class="modal-footer">
             <div class="form-group">
-               <button type="submit" name="btn_xacnhan" class="btn btn-lg btn-info"> Xác nhận <span class="glyphicon glyphicon-saved"></span></button>
-
-               <button type="button" data-dismiss="modal" class="btn btn-lg btn-default"> Hủy <span class="glyphicon glyphicon-remove"></span></button>
+            	<div class="col-xs-12 col-sm-6">
+            		<button style="width: 100%;margin-bottom: 5px" type="submit" name="btn_xacnhan" class="btn btn-lg btn-info"> Xác nhận <span class="glyphicon glyphicon-saved"></span></button>
+            	</div>
+               
+				<div class="col-xs-12 col-sm-6">
+					 <button style="width: 100%" type="button" data-dismiss="modal" class="btn btn-lg btn-default"> Hủy <span class="glyphicon glyphicon-remove"></span></button>
+				</div>              
             </div>
-         </div>
+        </div>
+
       </div>
 
 	</form>

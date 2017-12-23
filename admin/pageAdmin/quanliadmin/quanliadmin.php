@@ -1,9 +1,3 @@
-<div class="col-sm-12"><a class="btn icon-btn btn-primary pull-right" href="#themadminmoi" data-toggle="modal" style="
-	margin-right: -30px;
-	"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> Thêm admin mới</a>
-
-</div>
-
 
 
 
@@ -11,68 +5,124 @@
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/admin/function/quanliadmin/admin.php";
 ?>        
 <div class="row">
+
+	<div>
+		<a class="btn icon-btn btn-primary col-xs-12 col-sm-6 col-md-4 col-lg-3" href="#themadminmoi" data-toggle="modal" style="margin-bottom: 5px"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle" ></span> Thêm admin mới</a>
+	</div>
+
 	<div class="col-sm-12" style="margin-top: 5px;padding-right: 0px;padding-left: 0px;">
 	<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">Quản trị viên</label>
 	<form action="" method="post">
-		<table class="table table-bordered table-hover table-striped">
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr id="tieude_ds_sp">
+						<th  id="tieude" class="gridheader" style="text-align:center"><input id="check_all" type="checkbox" /></th>
+						<th id="tieude">#ID</th>
+						<th id="tieude">Tài khoản</th>
+						<th id="tieude">Họ tên</th>
+						<th id="tieude">Giới tính</th>
+						<th id="tieude">Số ĐT</th>
+						<th id="tieude">Level</th>
+						<th id="tieude">Địa chỉ</th>
+					
+
+					</tr>
+				</thead>
+				<tbody>
+				<?php
+				$ds=layDSAdmin();
+				while ($row_ds=mysql_fetch_array($ds)) {
+				?>
+
+					<tr>
+						<td  id="tieude" align="center"><input class="checkitem" type="checkbox" name="id[]" value="<?php echo $row_ds['id_nguoi_dung'];?>" /></td>
+						<td id="tieude"><?php echo $row_ds['id_nguoi_dung'];?></td>
+						<td id="tieude"><?php echo $row_ds['tai_khoan'];?></td>
+						<td id="tieude"><?php echo $row_ds['ho_ten'];?></td>
+						<?php
+						if ($row_ds['gioi_tinh']==1)
+							echo'<td id="tieude" style="text-align: center;">Nam</td>';
+						else
+							echo'<td id="tieude" style="text-align: center;">Nữ</td>';
+						?>
+						
+						<td id="tieude"><?php echo $row_ds['so_dien_thoai'];?></td>
+						<td  id="tieude" style="text-align: center;"><?php echo $row_ds['level'];?></td>
+						<td id="tieude"><?php echo $row_ds['dia_chi'];?></td>
+						
+					</tr>
+				<?php
+				}
+				?>
+				
+
+				</tbody>
+				<tfoot>
+	                <td colspan="5" style="padding-left: 0px;">
+	                    <button type="submit" class="btn" name="submmit" value="delete_all" style="display:none;color: white;background-color: #fe980f;"  OnClick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa mục đã chọn</button>
+	                </td>
+	            </tfoot>
+			</table>
+		</div>
+	</form>
+	</div>
+
+	<label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">Quản trị viên-VIP</label>
+	<div class="table-responsive" style="margin-top: 5px">
+		<table class="table">
 			<thead>
 				<tr id="tieude_ds_sp">
-					<th  id="tieude" class="gridheader" style="text-align:center"><input id="check_all" type="checkbox" /></th>
-					<th id="tieude">#ID</th>
+					
+					<th id="tieude">ID</th>
 					<th id="tieude">Tài khoản</th>
 					<th id="tieude">Họ tên</th>
 					<th id="tieude">Giới tính</th>
 					<th id="tieude">Số ĐT</th>
 					<th id="tieude">Level</th>
 					<th id="tieude">Địa chỉ</th>
-				
 
 				</tr>
 			</thead>
 			<tbody>
-			<?php
-			$ds=layDSAdmin();
-			while ($row_ds=mysql_fetch_array($ds)) {
+
+				<!-- Người quản trị cao cấp, chỉ có một người duy nhất và không thể xóa -->
+				<?php
+			$ds_VIP=layDSAdminVIP();
+			while ($row_dsVIP=mysql_fetch_array($ds_VIP)) {
 			?>
 
 				<tr>
-					<td  id="tieude" align="center"><input class="checkitem" type="checkbox" name="id[]" value="<?php echo $row_ds['id_nguoi_dung'];?>" /></td>
-					<td id="tieude"><?php echo $row_ds['id_nguoi_dung'];?></td>
-					<td id="tieude"><?php echo $row_ds['tai_khoan'];?></td>
-					<td id="tieude"><?php echo $row_ds['ho_ten'];?></td>
+					
+					<td id="tieude"><?php echo $row_dsVIP['id_nguoi_dung'];?></td>
+					<td id="tieude"><?php echo $row_dsVIP['tai_khoan'];?></td>
+					<td id="tieude"><?php echo $row_dsVIP['ho_ten'];?></td>
 					<?php
-					if ($row_ds['gioi_tinh']==1)
-						echo'<td id="tieude" style="text-align: center;">Nam</td>';
+					if ($row_dsVIP['gioi_tinh']==1)
+						echo'<td  id="tieude" style="text-align: center;">Nam</td>';
 					else
-						echo'<td id="tieude" style="text-align: center;">Nữ</td>';
+						echo'<td  id="tieude" style="text-align: center;">Nữ</td>';
 					?>
 					
-					<td id="tieude"><?php echo $row_ds['so_dien_thoai'];?></td>
-					<td  id="tieude" style="text-align: center;"><?php echo $row_ds['level'];?></td>
-					<td id="tieude"><?php echo $row_ds['dia_chi'];?></td>
+					<td id="tieude"><?php echo $row_dsVIP['so_dien_thoai'];?></td>
+					<td  id="tieude" style="text-align: center;"><?php echo $row_dsVIP['level'];?></td>
+					<td id="tieude"><?php echo $row_dsVIP['dia_chi'];?></td>
 					
 				</tr>
 			<?php
 			}
 			?>
-			
 
 			</tbody>
-			<tfoot>
-                <td colspan="5" style="padding-left: 0px;">
-                    <button type="submit" class="btn" name="submmit" value="delete_all" style="display:none;color: white;background-color: #fe980f;"  OnClick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa mục đã chọn</button>
-                </td>
-            </tfoot>
 
 		</table>
-	</form>
 	</div>
 </div>
 
 
 
 
-
+	
 
 <script type="text/javascript">
     $(function(){
@@ -120,59 +170,9 @@
 ?>
  
 
-<div class="row">
 	
-    <label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">Quản trị viên-VIP</label>
-	<div class="col-sm-12" style="margin-top: 5px;padding-right: 0px;padding-left: 0px;">
-		<table class="table table-bordered table-hover table-striped">
-			<thead>
-				<tr id="tieude_ds_sp">
-					
-					<th id="tieude">ID</th>
-					<th id="tieude">Tài khoản</th>
-					<th id="tieude">Họ tên</th>
-					<th id="tieude">Giới tính</th>
-					<th id="tieude">Số ĐT</th>
-					<th id="tieude">Level</th>
-					<th id="tieude">Địa chỉ</th>
 
-				</tr>
-			</thead>
-			<tbody>
 
-				<!-- Người quản trị cao cấp, chỉ có một người duy nhất và không thể xóa -->
-				<?php
-			$ds_VIP=layDSAdminVIP();
-			while ($row_dsVIP=mysql_fetch_array($ds_VIP)) {
-			?>
-
-				<tr>
-					
-					<td id="tieude"><?php echo $row_dsVIP['id_nguoi_dung'];?></td>
-					<td id="tieude"><?php echo $row_dsVIP['tai_khoan'];?></td>
-					<td id="tieude"><?php echo $row_dsVIP['ho_ten'];?></td>
-					<?php
-					if ($row_dsVIP['gioi_tinh']==1)
-						echo'<td  id="tieude" style="text-align: center;">Nam</td>';
-					else
-						echo'<td  id="tieude" style="text-align: center;">Nữ</td>';
-					?>
-					
-					<td id="tieude"><?php echo $row_dsVIP['so_dien_thoai'];?></td>
-					<td  id="tieude" style="text-align: center;"><?php echo $row_dsVIP['level'];?></td>
-					<td id="tieude"><?php echo $row_dsVIP['dia_chi'];?></td>
-					
-				</tr>
-			<?php
-			}
-			?>
-
-			</tbody>
-
-		</table>
-
-	</div>
-</div>
 
 
 <!-- Thêm quản trị viên mới -->
@@ -187,30 +187,31 @@
 
          <div class="modal-body">
             <div class="container-fluid">
-               <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                     <div class="form-group">
+             
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
                         <div class="input-group">
                            <div class="input-group-addon iga2">
                               <span class="glyphicon glyphicon-envelope"></span>
                            </div>
                            <input type="email" required class="form-control" placeholder="Nhập email của quản trị viên cần thêm" name="txtEmail">
-
                         </div>
-                     </div>
-                  </div>
-               </div>
-
-               
+                    </div>
+                </div>                     
             </div>
          </div>
 
          <div class="modal-footer">
-            <div class="form-group">
-               <button type="submit" name="btn_xacnhan" class="btn btn-lg btn-info"> Xác nhận <span class="glyphicon glyphicon-saved"></span></button>
+         
+            	<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="margin-bottom: 5px;">
+            		<button type="submit" name="btn_xacnhan" class="btn btn-lg btn-info" style="width: 100%"> Xác nhận <span class="glyphicon glyphicon-saved"></span></button>
 
-               <button type="button" data-dismiss="modal" class="btn btn-lg btn-default"> Hủy <span class="glyphicon glyphicon-remove"></span></button>
-            </div>
+            	</div>
+               <div class="col-xs-12 col-sm-6 col-md-offset-6 col-md-3 col-lf-offset-6 col-lg-3">
+               		<button type="button" data-dismiss="modal" class="btn btn-lg btn-default" style="width: 100%"> Hủy <span class="glyphicon glyphicon-remove"></span></button>
+               </div>
+               
+         
          </div>
       </div>
 	</form>

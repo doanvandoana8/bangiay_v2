@@ -6,7 +6,7 @@
  .thumbnail ,#member {
  	height: 180px;
  	margin-top: 15px;
- 	width: 200px;
+ 	width: 100%;
  }
 
  #noidung h4{

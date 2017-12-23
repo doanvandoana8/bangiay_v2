@@ -1,25 +1,34 @@
 
-    <form action="" method="post" enctype="multipart/form-data">
-    <label id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;">CẬP NHẬT ẢNH SẢN PHẨM</label>
-    <div class="input-group image-preview">
-   
-            <!-- <input type="text" class="form-control image-preview-filename" disabled="disabled"> don't give a name === doesn't send on POST/GET -->
-            <span class="input-group-btn">
-                <!-- image-preview-clear button -->
-                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                    <span class="glyphicon glyphicon-remove"></span> Xóa
-                </button>
-                <!-- image-preview-input -->
-                <div class="btn btn-default image-preview-input">
-                    <span class="glyphicon glyphicon-folder-open"></span>
-                    <span class="image-preview-input-title" id="nomal_lable">Chọn hình</span>
-                    <input required  type="file" accept="image/png, image/jpeg" name="hinhanh"/> <!-- rename it -->
-                </div>
-            </span>
-     <input type="submit" name="btn_ok" class="btn btn-info" value="Cập nhật ảnh sản phẩm" style="width: 40%;">
-     <button  id="btn_huy" onclick="huy" class="btn btn-info pull-right" style="width: 49%; border-radius: 0px;">Hủy bỏ</button>
-    </div><!-- /input-group image-preview [TO HERE]--> 
-    </form>
+<form action="" method="post" enctype="multipart/form-data">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+    id="nomal_lable" style="text-transform: uppercase;width: 100%;color: #ffffff;font-size: 32px;background-color: #fe980f;text-align: center;margin-top: 5px">CẬP NHẬT ẢNH SẢN PHẨM
+  </div>
+    
+    <div class="input-group image-preview col-xs-12 col-sm-12 col-md-12 col-lg-12">     
+      <span class="input-group-btn col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <!-- image-preview-clear button -->
+          <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Xóa
+          </button>
+          <!-- image-preview-input -->
+          <div class="btn btn-default image-preview-input" style="margin-top: 5px;margin-left: 0px">
+              <span class="glyphicon glyphicon-folder-open"></span>
+              <span class="image-preview-input-title" id="nomal_lable">Chọn hình</span>
+              <br>
+              <input required  type="file" accept="image/png, image/jpeg" name="hinhanh"/> <!-- rename it -->
+          </div>
+      </span>
+     
+      <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4" style="margin-top: 5px;margin-bottom: 5px">
+        <input type="submit" name="btn_ok" class="btn btn-info" value="Cập nhật ảnh sản phẩm" style="width: 100%;">
+      </div>
+     
+      <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-4 col-lg-offset-1 col-lg-4" style="margin-top: 5px">
+        <button  id="btn_huy" onclick="huy" class="btn btn-info pull-right" style="width: 100%; border-radius: 0px;">Hủy bỏ</button>
+      </div>
+     
+    </div>
+</form>
    
 <script>
     //Xu li theo lua chon: Yes or No

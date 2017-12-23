@@ -7,7 +7,7 @@
  	</div>
 
 	<div>
-		<div class="col-sm-2">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<label for="sel1">Tháng</label>
 			<select class="form-control" id="thang" name="opThang">
 			<option value="-1">Chọn tháng</option>
@@ -22,16 +22,16 @@
 				
 			</select>
 		</div>
-		<div class="col-sm-2">
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 			<label for="sel1">Năm</label>
 			<div id="dsNam"></div>
 		
 		</div>
 
-		<div style="margin-left: 735px">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 			
 			<div>
-				<button id="lammoi" style="margin-top: 19px;width: 100%;font-size: 16px;" name="btn_bao_cao" class="btn btn-sm btn-info pull-left"> Chi tiết</button>
+				<button id="lammoi" style="margin-top: 23px;width: 100%;font-size: 16px;" name="btn_bao_cao" class="btn btn-sm btn-info pull-left"> Chi tiết</button>
 
 			</div>
 			
