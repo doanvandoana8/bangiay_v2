@@ -107,14 +107,13 @@ a#scrollUp i{
   -o-transition: all 0.9s ease 0s;
 }
 
-.social-icons ul li a i:hover{
+/* .social-icons ul li a i:hover{
   color: #fff;
    transition: all 0.9s ease 0s;
   -moz-transition: all 0.9s ease 0s;
   -webkit-transition: all 0.9s ease 0s;
   -o-transition: all 0.9s ease 0s;
-}
-
+} */
 
 .fa-facebook:hover {
   background: #0083C9;
@@ -225,9 +224,9 @@ a#scrollUp i{
   padding-top: 30px;
 }
 
-.navbar-collapse.collapse{
-  padding-left: 0;
-}
+ .navbar-collapse.collapse{
+  /* padding-left: 0; */
+} 
 
 .mainmenu ul li{
   padding-right: 15px;

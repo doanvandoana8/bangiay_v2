@@ -84,45 +84,39 @@
 			</div>
 		</div><!--/header-middle-->
 	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-6 col-sm-12">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="/bangiay_v2" class="active">Trang chủ</a></li>
-								<li><a href="/bangiay_v2/index.php?p=gioithieu" class="">Giới thiệu</a></li>
-								<li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                    <?php
-                                    	$menu_trangchu = mnSanPhamTrangChuND();
-                                    	while ($row = mysql_fetch_array($menu_trangchu)) 
-                                    	{
-                                    			
-                                    ?>	
-                                        <li><a href="/bangiay_v2/index.php?p=sanpphamtheoloai&idLoai=<?php echo $row['id_loai_san_pham']?>">
-                                        <?php echo $row['ten_loai_san_pham'] ?></a></li>
-										
-									<?php
-									}
-									?>
-                                    </ul>
-                                </li> 
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #080808">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="/bangiay_v2/index.php?p=gioithieu" style="color: white;font-size: 16px;">Giới thiệu</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a  href="/bangiay_v2">Trang chủ</a></li>
+	            <li class="active"><a href="#" style="color: white">Sản phẩm</a>
+	          			<ul>
+	          				<?php
+                            	$menu_trangchu = mnSanPhamTrangChuND();
+                            	while ($row = mysql_fetch_array($menu_trangchu)) 
+                            	{
+                            			
+                            ?>
+	          				<li><a  href="/bangiay_v2/index.php?p=sanpphamtheoloai&idLoai=<?php echo $row['id_loai_san_pham']?>"><?php echo $row['ten_loai_san_pham'] ?></a></li>
+	          				<?php
+							}
+							?>
+	          			
+	          			</ul>
+	      			</li>
+	            <li class="active"><a href="../index.php?p=lienhe">Liên hệ</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
 
-								<li><a href="../index.php?p=lienhe">Liên hệ</a></li>
-							</ul>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div><!--/header-bottom-->
 </div>

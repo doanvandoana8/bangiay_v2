@@ -86,52 +86,64 @@
 			</div>
 		</div><!--/header-middle-->
 	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-8">
-						<!--Menu trang chu-->
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="/bangiay_v2" class="active">Trang chủ</a></li>
-								<li><a href="index.php?p=gioithieu" class="">Giới thiệu</a></li>
-								<li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                    <?php
-                                    	$menu_trangchu = mnSanPhamTrangChu();
-                                    	while ($row = mysql_fetch_array($menu_trangchu)) 
-                                    	{
-                                    			
-                                    ?>	
-                                        <li><a href="index.php?p=sanpphamtheoloai&idLoai=<?php echo $row['id_loai_san_pham']?>">
-                                        <?php echo $row['ten_loai_san_pham'] ?></a></li>
-										
-									<?php
-									}
-									?>
-                                    </ul>
-                                </li> 
+	
+		
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-8">
+			
+			<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #080800;">
+		      <div class="container">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="index.php?p=gioithieu" style="color: white;font-size: 15px;background-color: #080808">Giới thiệu</a>
+		        </div>
+		        <div id="navbar" class="collapse navbar-collapse" style="    background-color: #080800;">
+		          <ul class="nav navbar-nav">
+		            <li class="active"><a href="/bangiay_v2" >Trang chủ</a></li>
+		            <li class="active"><a  href="#" >Sản phẩm</a>
+		          			<ul>
+		          				<?php
+                            	$menu_trangchu = mnSanPhamTrangChu();
+                            	while ($row = mysql_fetch_array($menu_trangchu)) 
+                            	{	                                    			
+                                ?>
+		          				<li><a  href="index.php?p=sanpphamtheoloai&idLoai=<?php echo $row['id_loai_san_pham']?>"><?php echo $row['ten_loai_san_pham'] ?></a></li>					          				
+		          				<?php
+								}
+								?>
+		          			</ul>
+		      			</li>
+		            <li class="active"><a  href="index.php?p=lienhe" >Liên hệ</a></li>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+		      </div>
+		    </nav>
 
-								<li><a href="index.php?p=lienhe">Liên hệ</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-4">
-						<form action="" method="get">
-						  <div class="col-xs-12 col-sm-8 col-md-8">
-						   
-						      <input type="text"  name="ten" class="form-control" placeholder="Tìm kiếm theo tên...">
-						
-						  </div>
-						  <div class="col-xs-12 col-sm-4 col-md-4">
-						  	
-							<input  type="submit" value="Tìm kiếm" style="height: 33px;width: 100%;"> 
-							<input type="hidden" name="p" value="timkiemten">
-						  </div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-4" style="margin-bottom: 20px">
+			<form action="" method="get">
+			  <div class="col-xs-12 col-sm-8 col-md-8">
+			   
+			      <input type="text"  name="ten" class="form-control" placeholder="Tìm kiếm theo tên...">
+			
+			  </div>
+			  <div class="col-xs-12 col-sm-4 col-md-4">
+			  	
+				<input  type="submit" value="Tìm kiếm" style="height: 33px;width: 100%;"> 
+				<input type="hidden" name="p" value="timkiemten">
+			  </div>
+
+			</form>
+		</div>
+	</div>
+			
+
 </div>
+
+
 

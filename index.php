@@ -1,8 +1,6 @@
 <?php
 session_start();
-
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/dbCon.php";
-
 //Su dung duong dan tuong doi tranh tinh trang sai path
  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/trangchu.php";
 if (isset($_GET["p"]))
@@ -22,10 +20,11 @@ else
         width: 100%;
        }
     </style>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+	<link href="css/btr-menu.css" rel="stylesheet" />
+	<link href="css/starter-template.css" rel="stylesheet" />
 	<title>Home | Shoes-Shop</title>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +37,6 @@ else
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/swiper.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/thongtinnguoidung.css">
 	
 
@@ -54,12 +52,19 @@ else
    
     <![endif]-->  
     <script src="js/jquery-3.2.1.min.js"></script> 
-    <script src="js/bootstrap.min.js"></script> 
-    <script src="js/html5shiv.js"></script>
+   <!--  <script src="js/bootstrap.min.js"></script>  -->
+   <!--  <script src="js/html5shiv.js"></script> -->
  	<script src="js/swiper.min.js"></script> 
-	<script src="js/ajax.js"></script> 
+	<!-- <script src="js/ajax.js"></script>  -->
  
-    
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+    :root .carbonad,
+    :root #carbonads-container,
+    :root #content > #right > .dose > .dosesingle,
+    :root #content > #center > .dose > .dosesingle
+    { display: none !important; }
+    </style>
 </head><!--/head-->
 
 <body>
@@ -84,7 +89,6 @@ else
 				case "dangxuat" : require "page/profile/dangxuat.php";break;
 				case "xulidangki" : require "page/profile/xulidangki.php";break;
 				
-
 				//cart
 				case "unloggin-chitietdonhang" : require "page/cart/chitietdonhang_khongdangnhap.php";break;
 				case "giohang" : require "page/cart/addcart.php";break;
@@ -99,8 +103,6 @@ else
 				//chi tiet san pham
 				
 				case "chitietsanpham" : require "page/chitietsanpham/chitietsanpham.php";break;	
-
-
 				//trang chu
 				case "gioithieu" : require "page/trangchu/gioithieu.php";break;
 				case "lienhe" : require "page/trangchu/lienhe.php";break;
@@ -110,10 +112,8 @@ else
 				case "size" : require "page/timkiem/size.php";break;
 				//neu nguoi dung dang nhap thi se chuyen qua gio hang cua nguoi dung
 				
-
 				default : require "page/trangchu/trangchu.php";
 			}
-
 			?>
 			
 		</div>
@@ -125,7 +125,6 @@ else
 	</footer><!--/Footer-->
 	
 	<script>
-
 		var x = screen.width;
 	
 		if (x<=768){
@@ -167,12 +166,12 @@ else
 		
 	</script> 
 	
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<!-- <script src="js/jquery.js"></script> -->
+	<!-- <script src="js/bootstrap.min.js"></script> -->
 	<script src="js/jquery.scrollUp.min.js"></script>
 	<script src="js/price-range.js"></script>
 	<script src="js/jquery.prettyPhoto.js"></script>
-	<script src="js/main.js"></script>
+	<!-- <script src="js/main.js"></script> -->
 
 	<script>
       function initMap() {
@@ -191,5 +190,15 @@ else
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOArsadPOME1l9Tsr2gKer7LlD6QO23gc&callback=initMap">
     </script>
 
+	<script src="js/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="js/btr-menu.js"></script>
+	<script>
+	    $(document).ready(function () {
+	        $("#navbar").btrmenu();
+	    });
+	</script>
 </body>
 </html>
