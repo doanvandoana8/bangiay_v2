@@ -65,7 +65,7 @@ if (isset($_POST['btn_khoiphuc']))
           //Tiêu đề email
           $subject = "Khôi phục mật khẩu"; 
 
-           $code=md5(mt_rand());
+          $code=md5(mt_rand());
           //Nội dung email
           $comment = "Xin chào ".$to." .Bạn vừa yêu cầu một mật khẩu mới tại SHOES SHOP, mã xác nhận của bạn là  ".$code;
 

@@ -393,24 +393,17 @@ if (isset($_POST['btn_thanhtoandonhang'])){
 				$thanhtien=$thue+$total;
 				capnhatTongTienDH($row_idDonHang,$thue,$thanhtien);
 			}
-		//Gui email cho khach hang(Khong dang nhap)
-		  include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.smtp.php";
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/sendemail/class.phpmailer.php";  
-          include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/fcSendEmail.php"; 
 
           $mTo = addslashes($emailKH);
-          //$emailroot=$mTo;
-          $title = 'Mua hàng online tại SHOES SHOP';
-          
+          $subject = 'Mua hàng online tại SHOES SHOP';
 		  $nTo =$hotenKH;
-          $content = "Xin chào ".$nTo." .Bạn vừa đặt hàng tại SHOES SHOP, mã tra cứu thông tin đơn hàng của bạn là  ".$code." .Hãy nhập mã tra cứu tại đường link dưới đây để biết rõ hơn tình trạng cũng như thông tin về đơn hàng của bạn. Xin cảm ơn!<br><a href='http://localhost:8080/bangiay_v2/index.php?p=tracuudonhang'>Ấn vào đây để tra cứu</a>";
+          $comment = "Xin chào ".$nTo." .Bạn vừa đặt hàng tại SHOES SHOP, mã tra cứu thông tin đơn hàng của bạn là  ".$code." .Hãy nhập mã tra cứu tại đường link dưới đây để biết rõ hơn tình trạng cũng như thông tin về đơn hàng của bạn. Xin cảm ơn! http://localhost:8080/bangiay_v2/index.php?p=tracuudonhang";
        
 
-          
-          $diachicc = 'doanvandoana8uit@gmail.com';
-          //test gui mail
-          $mail = sendMail($title, $content, $nTo, $mTo,$diachicc='');
-          if($mail==1)
+          $header = "From:google@gmail.com \r\n";
+          $send=mail($mTo, $subject, $comment, $header);
+
+          if($send)
           {
               echo "<script> alert('Đặt hàng thành công. Một email thông báo đã được gửi đến địa chỉ email của quý khách, quý khách hãy kiểm tra lại email của mình để biết thêm chi tiết cũng như tình trạng của đơn hàng. Xin cảm ơn!');</script>";
               
@@ -419,7 +412,7 @@ if (isset($_POST['btn_thanhtoandonhang'])){
              echo "<script> alert('Lỗi, Gửi email thất bại. Quý khách có thể liên hệ số điện thoại : 0966 746 080 để được hỗ trợ về thông tin cũng như tình trạng của đơn hàng');</script>";
               
           }
-        echo "<script> alert('Đặt hàng thành công!');</script>";
+ 
         echo "<script> location.replace('index.php?p=delcart&id=0'); </script>";
         echo "<script> location.replace('index.php'); </script>";
         exit;//Thoat chuong trinh 
