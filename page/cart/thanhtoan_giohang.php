@@ -1,3 +1,23 @@
+<style>
+	#info_tt {
+		    font-size: 16px;
+		    border-left-style: none;
+		    border-right-style: none;
+		    border-top-style: none;
+		    border-bottom-style: double;
+		    margin-bottom: 5px;
+		    margin-top: 5px;
+		    width: 100%;
+	}
+	#title_tt {
+		    font-size: 20px;
+		    text-transform: uppercase;
+		    color: #fe980f;
+		    text-align: center;
+		    margin-top: 10px;
+	}
+
+</style>
 <?php
 include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/nguoidung/function/nguoidung.php";
 //include $_SERVER["DOCUMENT_ROOT"] . "/bangiay_v2/function/trangchu.php";
@@ -34,69 +54,65 @@ if(isset($_POST['btn_capnhat']))
 			</div>
 
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				<div class="shopper-informations">
-					<div class="row">
-						<div class="col-sm-5" style="margin-left: 32px;">
-							<div >
-								Thông tin của quý khách
-								<form action="index.php?p=thanhtoan-giohang" method="post">
-								<div >
-								<?php
-									if (isset($_SESSION['username'])){
-										$taikhoan= $_SESSION['username'];
-									//Neu ton tai tai khoan nguoi dung thi lay thong tin nguoi dung
-									$nguoidung=thongtinNguoiDung($taikhoan);
-									while ( $row_nguoidung = mysql_fetch_array($nguoidung)) {
-									//echo"<label>Họ và tên </label>";
-									echo"<input id='thanhtoandonhang' required type='text' name='txtHoTenKhachHang'placeholder='Họ và tên của quý khách.' value='";echo $row_nguoidung['ho_ten'];echo"'>";
-									
-									echo"<input  id='thanhtoandonhang' required type='email' name='txtEmailKhachHang' placeholder='Email của quý khách.' value='";echo $row_nguoidung['tai_khoan'];echo"'>";
-									//echo"<label>SĐT </label>";
-									echo"<input id='thanhtoandonhang' required type='number' maxlength='12' name='txtSoDTKhachHang' placeholder='Số điện thoại của quý khách.' value='";echo $row_nguoidung['so_dien_thoai'];echo"'>";
-									//echo"<label>Địa chỉ </label>";					
-									echo"<textarea maxlength='100' id='thanhtoandonhang' style='margin-top: 10px;' required name='txtDiaChiKhachHang' id='txtdiachi' class='form-control' rows='5' placeholder='Địa chỉ của quý khách.'>";echo $row_nguoidung['dia_chi'];echo"</textarea>";
-								
-									}
-								}
-									else{
-									//Neu khong dang nhap thi yeu cau khach dien thong tin
-									//echo"<label>Họ và tên </label>";
-									echo"<input id='thanhtoandonhang' required type='text' name='txtHoTenKhachHang' placeholder='Họ và tên của quý khách.' value='";echo"'>";
-									//echo"<label>Email </label>";
-									echo"<input  id='thanhtoandonhang' required type='text' name='txtEmailKhachHang' placeholder='Email của quý khách.' value='";echo"'>";
-									//echo"<label>SĐT </label>";
-									echo"<input id='thanhtoandonhang' required type='number'  name='txtSoDTKhachHang' placeholder='Số điện thoại của quý khách.' type='number' maxlength='12'  value='";echo"'>";
-									//echo"<label>Địa chỉ </label>";					
-									echo"<textarea maxlength='100' style='margin-top: 10px;' id='thanhtoandonhang' required name='txtDiaChiKhachHang' id='txtdiachi' class='form-control' rows='5' placeholder='Địa chỉ của quý khách.'>";echo"</textarea>";
-									}
-								
-									
-								?>
-								</div>
-
-							</div>
-						</div>
-						<div class="col-sm-5" style="margin-left: 44px;">
+				
+				<div class="col-xs-12 col-sm-6">
+			
+						<div id="title_tt">Thông tin của quý khách</div>
+						<form action="index.php?p=thanhtoan-giohang" method="post">
+						<div >
+						<?php
+							if (isset($_SESSION['username'])){
+								$taikhoan= $_SESSION['username'];
+							//Neu ton tai tai khoan nguoi dung thi lay thong tin nguoi dung
+							$nguoidung=thongtinNguoiDung($taikhoan);
+							while ( $row_nguoidung = mysql_fetch_array($nguoidung)) {
+							//echo"<label>Họ và tên </label>";
+							echo"<input id='info_tt' required type='text' name='txtHoTenKhachHang'placeholder='Họ và tên của quý khách.'  value='";echo $row_nguoidung['ho_ten'];echo"'>";
 							
-								Địa chỉ giao & nhận hàng
-
-								<div >
-									<!-- <label>Tên người nhận </label> -->
-									<input id="thanhtoandonhang" required type="text" name="txtTenNguoiNhan" placeholder="Họ và tên người nhận hàng.">
-								<!-- 	<label>Email </label> -->
-									<input id="thanhtoandonhang" required type="email" name="txtEmailNguoiNhan" placeholder="Email người nhận hàng.">
-									<!-- <label>SĐT </label> -->
-									<input id="thanhtoandonhang" required  type="number" maxlength="12" name="txtSoDTNguoiNhan" placeholder="Số điện thoại người nhận hàng.">
-									<!-- <label>Địa chỉ </label>	 -->					
-									<textarea maxlength='100' style='margin-top: 10px;' id="thanhtoandonhang" required name="txtDiaChiNguoiNhan" id="txtdiachi" class="form-control" rows="5" placeholder="Địa chỉ nhận hàng."></textarea>
-
-								</div>
+							echo"<input  id='info_tt' required type='email' name='txtEmailKhachHang' style='width:100%' placeholder='Email của quý khách.' value='";echo $row_nguoidung['tai_khoan'];echo"'>";
+							//echo"<label>SĐT </label>";
+							echo"<input id='info_tt' required type='number' maxlength='12' style='width:100%' name='txtSoDTKhachHang' placeholder='Số điện thoại của quý khách.' value='";echo $row_nguoidung['so_dien_thoai'];echo"'>";
+							//echo"<label>Địa chỉ </label>";					
+							echo"<textarea maxlength='100' id='info_tt' required name='txtDiaChiKhachHang' class='form-control' rows='5' placeholder='Địa chỉ của quý khách.'>";echo $row_nguoidung['dia_chi'];echo"</textarea>";
+						
+							}
+						}
+							else{
+							//Neu khong dang nhap thi yeu cau khach dien thong tin
+							//echo"<label>Họ và tên </label>";
+							echo"<input id='info_tt' style='width:100%' required type='text' name='txtHoTenKhachHang' placeholder='Họ và tên của quý khách.' value='";echo"'>";
+							//echo"<label>Email </label>";
+							echo"<input  id='info_tt' style='width:100%' required type='text' name='txtEmailKhachHang' placeholder='Email của quý khách.' value='";echo"'>";
+							//echo"<label>SĐT </label>";
+							echo"<input id='info_tt' style='width:100%' required type='number'  name='txtSoDTKhachHang' placeholder='Số điện thoại của quý khách.' type='number' maxlength='12'  value='";echo"'>";
+							//echo"<label>Địa chỉ </label>";					
+							echo"<textarea maxlength='100'  id='info_tt' required name='txtDiaChiKhachHang' class='form-control' rows='5' placeholder='Địa chỉ của quý khách.'>";echo"</textarea>";
+							}
+						
 							
-						</div>
-
-					</div>
+						?>
+						</div>						
 				</div>
-				<div class="review-payment">
+				<div class="col-xs-12 col-sm-6">
+					
+						<div id="title_tt">Địa chỉ giao & nhận hàng</div>
+
+						<div >
+							<!-- <label>Tên người nhận </label> -->
+							<input id="info_tt" required type="text" name="txtTenNguoiNhan" placeholder="Họ và tên người nhận hàng.">
+						<!-- 	<label>Email </label> -->
+							<input id="info_tt" required type="email" name="txtEmailNguoiNhan" placeholder="Email người nhận hàng.">
+							<!-- <label>SĐT </label> -->
+							<input id="info_tt"  required  type="number" maxlength="12" name="txtSoDTNguoiNhan" placeholder="Số điện thoại người nhận hàng.">
+							<!-- <label>Địa chỉ </label>	 -->					
+							<textarea maxlength='100'  id="info_tt" required name="txtDiaChiNguoiNhan"  class="form-control" rows="5" placeholder="Địa chỉ nhận hàng."></textarea>
+
+						</div>							
+				</div>
+		
+				
+
+				<div class="review-payment col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<h2 style="margin-bottom: -20px;text-align:center;margin-top: 26px;">Thông tin đơn hàng</h2>
 				</div>
 				<div>
@@ -112,7 +128,7 @@ if(isset($_POST['btn_capnhat']))
 									<td class="quantity" id="mn_gh_sl">Số lượng</td>
 									<td class="total" id="mn_gh_thanhtien">Thành tiền</td>
 									<td class="total" id="mn_gh_action">Action</td>
-									<td></td>
+									
 								</tr>
 							</thead>
 							<tbody> 

@@ -3,7 +3,7 @@
 <link href="css/chitietnguoidung.css" rel="stylesheet">
 <div class="container">
   <div class="row">
-    <div class="col-sm-3" style="text-transform: inherit;margin-bottom: 20px;">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" style="text-transform: inherit;margin-bottom: 20px;">
       
       <ul class="nav nav-pills nav-stacked nav-email shadow mb-20" id="mn_trai_nguoidung">
         
