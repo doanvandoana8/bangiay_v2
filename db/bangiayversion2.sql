@@ -2,10 +2,10 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 20, 2017 at 06:39 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 24, 2017 lúc 09:15 AM
+-- Phiên bản máy phục vụ: 10.1.25-MariaDB
+-- Phiên bản PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,12 +19,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bangiayversion2`
+-- Cơ sở dữ liệu: `bangiayversion2`
 --
 
 DELIMITER $$
 --
--- Procedures
+-- Thủ tục
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `tongTienGioHang` (`idgiohang` INT(11))  BEGIN
 	DECLARE tongbd INT DEFAULT 0;
@@ -44,7 +44,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `baocao`
+-- Cấu trúc bảng cho bảng `baocao`
 --
 
 CREATE TABLE `baocao` (
@@ -57,7 +57,7 @@ CREATE TABLE `baocao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `baocao`
+-- Đang đổ dữ liệu cho bảng `baocao`
 --
 
 INSERT INTO `baocao` (`id_bao_cao`, `id_san_pham`, `ten_san_pham`, `ngay`, `so_luong`, `doanh_thu`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `baocao` (`id_bao_cao`, `id_san_pham`, `ten_san_pham`, `ngay`, `so_l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `binhluan`
+-- Cấu trúc bảng cho bảng `binhluan`
 --
 
 CREATE TABLE `binhluan` (
@@ -90,7 +90,7 @@ CREATE TABLE `binhluan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `binhluan`
+-- Đang đổ dữ liệu cho bảng `binhluan`
 --
 
 INSERT INTO `binhluan` (`id_binh_luan`, `id_nguoi_dung`, `noi_dung_binh_luan`, `id_san_pham`, `thoi_gian_tao`, `ngay_tao`) VALUES
@@ -106,7 +106,7 @@ INSERT INTO `binhluan` (`id_binh_luan`, `id_nguoi_dung`, `noi_dung_binh_luan`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietdonhang`
+-- Cấu trúc bảng cho bảng `chitietdonhang`
 --
 
 CREATE TABLE `chitietdonhang` (
@@ -118,7 +118,7 @@ CREATE TABLE `chitietdonhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `chitietdonhang`
+-- Đang đổ dữ liệu cho bảng `chitietdonhang`
 --
 
 INSERT INTO `chitietdonhang` (`id_don_hang`, `id_san_pham`, `ctdh_so_luong`, `gia_dat_hang`, `thanh_tien`) VALUES
@@ -141,12 +141,17 @@ INSERT INTO `chitietdonhang` (`id_don_hang`, `id_san_pham`, `ctdh_so_luong`, `gi
 (99, 9, 10, 1199, 11990),
 (100, 2, 1, 999000, 999000),
 (100, 3, 1, 12000, 12000),
-(101, 9, 1, 1199, 1199);
+(101, 5, 1, 2000, 2000),
+(101, 6, 1, 168000, 168000),
+(102, 6, 1, 168000, 168000),
+(103, 9, 1, 1199, 1199),
+(104, 6, 1, 168000, 168000),
+(105, 10, 1, 20000, 20000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donhang`
+-- Cấu trúc bảng cho bảng `donhang`
 --
 
 CREATE TABLE `donhang` (
@@ -168,7 +173,7 @@ CREATE TABLE `donhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `donhang`
+-- Đang đổ dữ liệu cho bảng `donhang`
 --
 
 INSERT INTO `donhang` (`id_don_hang`, `code`, `tai_khoan`, `ten_khach_hang`, `so_dien_thoai_khach_hang`, `email_khach_hang`, `ngay_dat_hang`, `dia_chi_khach_hang`, `ten_nguoi_nhan`, `email_nguoi_nhan`, `so_dien_thoai_nguoi_nhan`, `dia_chi_nguoi_nhan`, `thue_GTGT`, `tong_tien`, `trang_thai`) VALUES
@@ -187,12 +192,16 @@ INSERT INTO `donhang` (`id_don_hang`, `code`, `tai_khoan`, `ten_khach_hang`, `so
 (98, 'cb3af86fa3a20f3d9c5ba28d64e225c5', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '0966746080', 'doanvandoana8@gmail.com', '2017-09-10', 'Thủ đức, Thành phố Hồ chí Minh', 'Trần Minh Tú', 'da@gmail.com', 123456789, 'KTX A', 26900, 295900, 'da_giao_dich'),
 (99, 'b2297eff779d3dbd5535601c949cf44c', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '0966746080', 'doanvandoana8@gmail.com', '2017-09-10', 'Thủ đức, Thành phố Hồ chí Minh', 'Đoàn Văn ĐOàn', 'tu@gmail.com', 123456789, 'KTX A', 1199, 13189, 'da_xu_li'),
 (100, '82ec4324369e9a3021cf282538c22639', '', 'Đoàn Văn Đoàn', '0123456789', 'doanvandoana8@gmail.com', '2017-10-11', 'KTX B', 'Trần Thành Văn', 'van@gmail.com', 123456654, 'KTX A', 101100, 1112100, 'da_xu_li'),
-(101, '009c40d96da66c899921484affba9e88', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '966746080', 'doanvandoana8@gmail.com', '2017-10-16', 'Thủ đức, Thành phố Hồ chí Minh', 'Trần Minh Tú', 'tu@gmail.com', 123456789, 'alkdjljkasjdk', 120, 1319, 'dang_cho');
+(101, '68ed98a28497bbf8d3a289c8f5138cb8', 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '966746080', 'doanvandoana8@gmail.com', '2017-12-22', 'Thủ đức, Thành phố Hồ chí Minh', 'Doan Van Doan', 'doanvandoana8@gmail.com', 123456789, 'Ho Chi Minh', 17000, 187000, 'dang_cho'),
+(102, '8c76420deaa6e55aca651857afc5f0be', '', 'Doan Van Doan', '0123456789', 'doanvandoana8@gmail.com', '2017-12-23', 'Thu Duc', 'Tran Thanh van', 'van@gmail.com', 123456789, 'Buon Trap', 16800, 184800, 'dang_cho'),
+(103, '75ac55328f0d9b71a04a342c3eef4f51', '', 'Doan Van Doan', '12345666555', 'doanvandoana8@gmail.com', '2017-12-23', 'adkjslakjsdklj', 'kjashdkjashdh', '2@gmail.com', 2147483647, 'adjljadjklasldkja', 120, 1319, 'dang_cho'),
+(104, '468ec2890b38cadc42f3e228b0da21c6', '', 'Doan Van Doan', '214123412', 'doanvandoana8@gmail.com', '2017-12-23', 'adasdasd', 'dasdasd', '2@gmail.com', 2147483647, 'asdasdasdas', 16800, 184800, 'dang_cho'),
+(105, '9a986e297e6a210f2142ef8789dcac2f', '', 'Doan Van Doan', '1234213213', 'doanvandoana8@gmail.com', '2017-12-23', 'asdadasd', 'tasdasdasd', '2@gmail.com', 2142141234, 'asdasdasdas', 2000, 22000, 'dang_cho');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gioithieu`
+-- Cấu trúc bảng cho bảng `gioithieu`
 --
 
 CREATE TABLE `gioithieu` (
@@ -203,16 +212,16 @@ CREATE TABLE `gioithieu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `gioithieu`
+-- Đang đổ dữ liệu cho bảng `gioithieu`
 --
 
 INSERT INTO `gioithieu` (`id_gioi_thieu`, `logo_trang_chu`, `trang_chu`, `trang_con`) VALUES
-(1, '<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"color:#000000\">Cung cấp ra thị trường rất nhiều sản phẩm gi&agrave;y chất lượng, mẫu m&atilde; đa dạng, style mới nhất... mang đến cho Qu&yacute; Kh&aacute;ch H&agrave;ng cảm gi&aacute;c mạnh mẽ, tự tin, c&aacute; t&iacute;nh v&agrave; thanh lịch.</span></span></span></p>\r\n', '<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Ch&uacute;ng t&ocirc;i cung cấp c&aacute;c loại gi&agrave;y đa dạng từ 100K đến 5000K để đ&aacute;p ứng mọi nhu cầu của kh&aacute;ch h&agrave;ng từ đơn giản đến phức tạp. H&atilde;y tham khảo Bảng gi&aacute; website &amp; Chức năng website để biết th&ecirc;m th&ocirc;ng tin về c&aacute;c g&oacute;i dịch vụ của ch&uacute;ng t&ocirc;i. SHOES SHOP đ&atilde; phục vụ hơn 1,000 kh&aacute;ch h&agrave;ng trong nước v&agrave; quốc tế. Rất h&acirc;n hạnh phục vụ Qu&yacute; kh&aacute;ch!</span></span></p>\r\n', '<p style=\"text-align:center\"><span style=\"color:#d35400\"><strong>CH&Agrave;O MỪNG BẠN ĐẾN VỚI SHOES SHOP</strong></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"color:#d35400\"><strong>SHOP B&Aacute;N GI&Agrave;Y ONLINE CHẤT LƯỢNG CAO TẠI VIỆT NAM</strong></span></p>\r\n\r\n<p style=\"text-align:center\">&nbsp;</p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"color:#d35400\"><strong>Giới thiệu về shoes shop</strong></span></span></p>\r\n\r\n<p><span style=\"font-size:14px\">Chuy&ecirc;n ph&acirc;n phối c&aacute;c loại gi&agrave;y cao cấp h&agrave;ng đầu tại việt nam.</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Tại SHOES SHOP&nbsp;&nbsp;kh&aacute;ch h&agrave;ng c&oacute; thể t&igrave;m th&ocirc;ng tin của tất cả c&aacute;c sản phẩm nhanh ch&oacute;ng, th&ocirc;ng tin kỹ thuật của sản phẩm được m&ocirc; tả đầy đủ, c&oacute; gi&aacute; cả r&otilde; r&agrave;ng.</span></p>\r\n\r\n<p><span style=\"font-size:14px\">H&agrave;ng h&oacute;a v&agrave; nh&agrave; cung cấp được kiểm duyệt nhằm đảm bảo chất lượng, gi&aacute; cả canh tranh v&agrave; đ&aacute;p ứng nhanh nhu cầu của kh&aacute;ch h&agrave;ng.</span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"color:#d35400\"><strong>Th&ocirc;ng tin li&ecirc;n hệ</strong></span></span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Shoes shop.</span></span></p>\r\n\r\n<p><span style=\"font-size:14px\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Thủ đức - Việt Nam</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Mobile: +84 966 746 080</span></p>\r\n\r\n<p><span style=\"font-size:14px\">Email: 14520168@gm.uit.edu.vn</span></p>\r\n\r\n<p>&nbsp;</p>\r\n');
+(1, '<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"font-size:16px\"><span style=\"color:#000000\">Cung cấp ra thị trường rất nhiều sản phẩm gi&agrave;y chất lượng, mẫu m&atilde; đa dạng, style mới nhất... mang đến cho Qu&yacute; Kh&aacute;ch H&agrave;ng cảm gi&aacute;c mạnh mẽ, tự tin, c&aacute; t&iacute;nh v&agrave; thanh lịch.</span></span></span></p>\r\n', '<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"font-size:16px\">Ch&uacute;ng t&ocirc;i cung cấp c&aacute;c loại gi&agrave;y đa dạng từ 100K đến 5000K để đ&aacute;p ứng mọi nhu cầu của kh&aacute;ch h&agrave;ng từ đơn giản đến phức tạp. H&atilde;y tham khảo Bảng gi&aacute; website &amp; Chức năng website để biết th&ecirc;m th&ocirc;ng tin về c&aacute;c g&oacute;i dịch vụ của ch&uacute;ng t&ocirc;i. SHOES SHOP đ&atilde; phục vụ hơn 1,000 kh&aacute;ch h&agrave;ng trong nước v&agrave; quốc tế. Rất h&acirc;n hạnh phục vụ Qu&yacute; kh&aacute;ch!</span></span></p>\r\n', '<p style=\"text-align:center\"><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"color:#d35400\"><strong>CH&Agrave;O MỪNG BẠN ĐẾN VỚI SHOES SHOP</strong></span></span></p>\r\n\r\n<p style=\"text-align:center\"><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"color:#d35400\"><strong>SHOP B&Aacute;N GI&Agrave;Y ONLINE CHẤT LƯỢNG CAO TẠI VIỆT NAM</strong></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"color:#d35400\"><strong>Giới thiệu về shoes shop</strong></span></span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">Chuy&ecirc;n ph&acirc;n phối c&aacute;c loại gi&agrave;y cao cấp h&agrave;ng đầu tại việt nam.</span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">Tại SHOES SHOP&nbsp;&nbsp;kh&aacute;ch h&agrave;ng c&oacute; thể t&igrave;m th&ocirc;ng tin của tất cả c&aacute;c sản phẩm nhanh ch&oacute;ng, th&ocirc;ng tin kỹ thuật của sản phẩm được m&ocirc; tả đầy đủ, c&oacute; gi&aacute; cả r&otilde; r&agrave;ng.</span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">H&agrave;ng h&oacute;a v&agrave; nh&agrave; cung cấp được kiểm duyệt nhằm đảm bảo chất lượng, gi&aacute; cả canh tranh v&agrave; đ&aacute;p ứng nhanh nhu cầu của kh&aacute;ch h&agrave;ng.</span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"color:#d35400\"><strong>Th&ocirc;ng tin li&ecirc;n hệ</strong></span></span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"font-size:16px\">Shoes shop.</span></span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh</span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">Thủ đức - Việt Nam</span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">Mobile: +84 966 746 080</span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\">Email: 14520168@gm.uit.edu.vn</span></p>\r\n\r\n<p>&nbsp;</p>\r\n');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lienhe`
+-- Cấu trúc bảng cho bảng `lienhe`
 --
 
 CREATE TABLE `lienhe` (
@@ -226,7 +235,7 @@ CREATE TABLE `lienhe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lienhe`
+-- Đang đổ dữ liệu cho bảng `lienhe`
 --
 
 INSERT INTO `lienhe` (`id_lien_he`, `ho_ten`, `email`, `chu_de`, `noi_dung_lien_he`, `phan_hoi_cho_khach_hang`, `ngay_tao`) VALUES
@@ -234,12 +243,12 @@ INSERT INTO `lienhe` (`id_lien_he`, `ho_ten`, `email`, `chu_de`, `noi_dung_lien_
 (8, 'Từ vạn thuận', 'tuvanthuan1996@gmail.com', 'Giày mới', 'Tôi muốn mua thêm 100 đôi giày mới nữa', 'Chúng tôi không có nhập về nhiều như vậy, nếu muốn bạn có thể gọi đt cho chúng tôi để trao đổi trực tiếp', '2017-09-03'),
 (9, 'Đoàn Văn Đoàn', '14520168@gm.uit.edu.vn', 'Mua giày Nike', 'Hiện tại tôi đã đặt giày với shop nhưng chưa thấy xử lí gì cả, shop trả lời nhanh giùm với', 'Chào bạn, chúng tôi đang cố gắng khắc phục sự cố này, xin lỗi bạn', '2017-09-10'),
 (10, 'Đoàn Văn Đoàn', '14520168@gm.uit.edu.vn', 'Giao hàng trễ', 'Bữa nay shop giao hàng trễ quá, gì mà tới 11h khuya mới giao hàng là sao', 'Hiện tại chúng tôi đang thiếu nguồn nhân lực, rất mong quý khách thông cảm', '2017-09-10'),
-(11, 'Trần Văn Tí', 'doanvandoana8@gmail.com', 'Sản phẩm hết hàng', 'Sản phẩm abc đã hết hàng, tôi muốn đặt thêm 2 đôi giày nữa, shop có thể đáp ứng được không', 'Hiện tại chúng tôi chưa nhập hàng về, khi nào nhập chúng tôi sẽ báo lại cho quý khách', '2017-10-11');
+(11, 'Trần Văn Tí', 'doanvandoana8@gmail.com', 'Sản phẩm hết hàng', 'Sản phẩm abc đã hết hàng, tôi muốn đặt thêm 2 đôi giày nữa, shop có thể đáp ứng được không', 'Gần có hàng rồi anh, vui lòng chờ', '2017-10-11');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `loaisanpham`
+-- Cấu trúc bảng cho bảng `loaisanpham`
 --
 
 CREATE TABLE `loaisanpham` (
@@ -252,11 +261,11 @@ CREATE TABLE `loaisanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `loaisanpham`
+-- Đang đổ dữ liệu cho bảng `loaisanpham`
 --
 
 INSERT INTO `loaisanpham` (`id_loai_san_pham`, `ten_loai_san_pham`, `ngay_tao`, `nguoi_tao`, `ngay_cap_nhat`, `nguoi_cap_nhat`) VALUES
-(1, 'Nike', '2017-08-02', 'Đoàn Văn Đoàn', '2017-09-04', 'Đoàn Văn Đoàn'),
+(1, 'Nike', '2017-08-02', 'Đoàn Văn Đoàn', '2017-12-22', 'Đoàn Văn Đoàn'),
 (2, 'Adidas', '2017-08-02', 'Đoàn Văn Đoàn', '2017-08-03', 'Trần Thành Văn'),
 (3, 'Converse', '2017-08-02', 'Đoàn Văn Đoàn', '2017-09-04', 'Đoàn Văn Đoàn'),
 (4, 'Vans', '2017-08-02', 'Đoàn Văn Đoàn', '2017-09-04', 'Đoàn Văn Đoàn'),
@@ -265,7 +274,7 @@ INSERT INTO `loaisanpham` (`id_loai_san_pham`, `ten_loai_san_pham`, `ngay_tao`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nguoidung`
+-- Cấu trúc bảng cho bảng `nguoidung`
 --
 
 CREATE TABLE `nguoidung` (
@@ -282,11 +291,11 @@ CREATE TABLE `nguoidung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `nguoidung`
+-- Đang đổ dữ liệu cho bảng `nguoidung`
 --
 
 INSERT INTO `nguoidung` (`id_nguoi_dung`, `tai_khoan`, `ho_ten`, `anh_nguoi_dung`, `gioi_tinh`, `so_dien_thoai`, `mat_khau`, `level`, `dia_chi`, `code`) VALUES
-(1, 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', '0f0b7fbbea026a0c31a7ca421837d791.png', 1, '966746080', 'c4ca4238a0b923820dcc509a6f75849b', 2, 'Thủ đức, Thành phố Hồ chí Minh', '4bb5f2f99f95e6f43600b4a234301fc0'),
+(1, 'doanvandoana8@gmail.com', 'Đoàn Văn Đoàn', 'd845b5c8ee272fb39c048aa6bfdab71e.jpg', 1, '966746080', '25f9e794323b453885f5181f1b624d0b', 2, 'Thủ đức, Thành phố Hồ chí Minh', 'b20df723576fff5ab35fa6d7e2512c64'),
 (2, 'tranthanhvan@gmail.com', 'Trần thành văn', 'gallery2.jpg', 1, '0966746080', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'Kí túc xá khu B', ''),
 (16, 'doan@gmail.com', 'Đoàn văn Đoàn', '', 1, '0966746080', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'Buôn ma lắc', ''),
 (17, 'van@gmail.com', 'Trần Thành Văn', '', 1, '0966746080', 'c4ca4238a0b923820dcc509a6f75849b', 0, 'Thái thịnh', 'fe8d5ff77f8d67c9f92319cd6eff84df'),
@@ -295,12 +304,15 @@ INSERT INTO `nguoidung` (`id_nguoi_dung`, `tai_khoan`, `ho_ten`, `anh_nguoi_dung
 (20, 'minhnguyen@gmail.com', 'Văn Minh Nguyên', '', 1, '0966746080', 'c4ca4238a0b923820dcc509a6f75849b', 0, 'Nguyên BMT', ''),
 (21, 'tranthanh@gmail.com', 'Văn Bình phước', '', 1, '0966746080', 'c4ca4238a0b923820dcc509a6f75849b', 0, 'Bình phước', 'code'),
 (24, '14520168@gm.uit.edu.vn', 'Đoàn Văn ĐOàn', 'd57cb4e461097e29a38857e266bc2ab0.png', 1, '0966746080', 'c4ca4238a0b923820dcc509a6f75849b', 1, 'KTX B', ''),
-(25, 'doanvandoana8uit@gmail.com', '', '', 0, '', 'e10adc3949ba59abbe56e057f20f883e', 1, '', '79f13937d1a31d37aad2ad703866c0bf');
+(25, 'doanvandoana8uit@gmail.com', '', '', 0, '', 'c4ca4238a0b923820dcc509a6f75849b', 1, '', '79f13937d1a31d37aad2ad703866c0bf'),
+(26, '2@gmail.com', 'dasdasd', '', 0, '123456789', 'fcea920f7412b5da7be0cf42b8c93759', 0, 'asdasdasd', 'd8410759a0257467103bf558a499d3bb'),
+(29, 'doanvandoanweb1992@gmail.com', '', '', 0, '', '25f9e794323b453885f5181f1b624d0b', 1, '', '99e5defa0a4e0874d41880703062fc0c'),
+(30, '3@gmail.com', 'Clone abc', '11fc4abca09361dc5bdb423c78875af1.png', 0, '123456789', '25f9e794323b453885f5181f1b624d0b', 0, 'buon eana', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -321,11 +333,11 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
 INSERT INTO `sanpham` (`id_san_pham`, `ten_san_pham`, `id_loai_san_pham`, `anh_san_pham`, `thong_tin`, `san_pham_khuyen_mai`, `kinh_doanh`, `gia_ban_dau`, `gia_khuyen_mai`, `ngay_dang`, `size`, `so_luong`, `so_luot_mua`, `thoi_gian_cap_nhat_KM`) VALUES
-(2, 'Puma đức', 5, '05ef69dcc026e1cf15e0ba56308ef7ae.jpg', '<p><span style=\"font-family:Courier New,Courier,monospace\">Đ&acirc;y l&agrave; gi&agrave;y puma đức</span></p>\r\n', 1, 1, 1200000, 999000, '2017-08-01', 32, 8, 6, '2017-09-07 14:48:51'),
+(2, 'Puma đức', 5, '05ef69dcc026e1cf15e0ba56308ef7ae.jpg', '<p><span style=\"font-family:Courier New,Courier,monospace\">Đ&acirc;y l&agrave; gi&agrave;y puma đức</span></p>\r\n', 1, 1, 1200000, 998000, '2017-08-01', 32, 8, 6, '2017-12-23 16:05:11'),
 (3, 'Adidas hà lan', 2, 'a2712969db382b88fd5789a57fa6953f.jpg', 'Đây là thông tin giày Adidas hà lan', 1, 1, 12000, 12000, '2017-08-01', 30, 10, 5, '0000-00-00'),
 (4, 'Adidas châu mĩ', 2, 'Adidas Tubular Shadow Olive.png', 'Đây là thông tin giày Adidas châu mĩ', 1, 1, 12000, 12000, '2017-08-01', 30, 10, 5, '0000-00-00'),
 (5, 'Converse hà lan loại 2', 3, 'adidas-nmd-r1-primeknit-white-black-by1911-1.jpg', 'Đây là thông tin giày Converse hà lan loại 2', 0, 1, 2000, 1500, '2017-08-10', 30, 9, 6, '0000-00-00'),
@@ -345,7 +357,7 @@ INSERT INTO `sanpham` (`id_san_pham`, `ten_san_pham`, `id_loai_san_pham`, `anh_s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `thongtinlienhe`
+-- Cấu trúc bảng cho bảng `thongtinlienhe`
 --
 
 CREATE TABLE `thongtinlienhe` (
@@ -354,123 +366,123 @@ CREATE TABLE `thongtinlienhe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `thongtinlienhe`
+-- Đang đổ dữ liệu cho bảng `thongtinlienhe`
 --
 
 INSERT INTO `thongtinlienhe` (`id`, `noi_dung_thong_tin_lien_he`) VALUES
-(1, '<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh Thủ đức - Việt Nam</span></span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Mobile: +84 966 746 080</span></span></p>\r\n\r\n<p><span style=\"font-size:14px\"><span style=\"font-family:Tahoma,Geneva,sans-serif\">Email: 14520168@gm.uit.edu.vn</span></span></p>\r\n');
+(1, '<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"font-size:16px\">K&iacute; t&uacute;c x&aacute; khu B ĐHQG Tp Hồ Ch&iacute; Minh Thủ đức - Việt Nam</span></span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"font-size:16px\">Mobile: +84 966 746 080</span></span></p>\r\n\r\n<p><span style=\"font-family:Tahoma,Geneva,sans-serif\"><span style=\"font-size:16px\">Email: 14520168@gm.uit.edu.vn&nbsp;</span></span></p>\r\n');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `baocao`
+-- Chỉ mục cho bảng `baocao`
 --
 ALTER TABLE `baocao`
   ADD PRIMARY KEY (`id_bao_cao`);
 
 --
--- Indexes for table `binhluan`
+-- Chỉ mục cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
   ADD PRIMARY KEY (`id_binh_luan`);
 
 --
--- Indexes for table `chitietdonhang`
+-- Chỉ mục cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
   ADD PRIMARY KEY (`id_don_hang`,`id_san_pham`);
 
 --
--- Indexes for table `donhang`
+-- Chỉ mục cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   ADD PRIMARY KEY (`id_don_hang`);
 
 --
--- Indexes for table `gioithieu`
+-- Chỉ mục cho bảng `gioithieu`
 --
 ALTER TABLE `gioithieu`
   ADD PRIMARY KEY (`id_gioi_thieu`);
 
 --
--- Indexes for table `lienhe`
+-- Chỉ mục cho bảng `lienhe`
 --
 ALTER TABLE `lienhe`
   ADD PRIMARY KEY (`id_lien_he`);
 
 --
--- Indexes for table `loaisanpham`
+-- Chỉ mục cho bảng `loaisanpham`
 --
 ALTER TABLE `loaisanpham`
   ADD PRIMARY KEY (`id_loai_san_pham`);
 
 --
--- Indexes for table `nguoidung`
+-- Chỉ mục cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
   ADD PRIMARY KEY (`id_nguoi_dung`);
 
 --
--- Indexes for table `sanpham`
+-- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`id_san_pham`);
 ALTER TABLE `sanpham` ADD FULLTEXT KEY `ten_san_pham` (`ten_san_pham`);
 
 --
--- Indexes for table `thongtinlienhe`
+-- Chỉ mục cho bảng `thongtinlienhe`
 --
 ALTER TABLE `thongtinlienhe`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `baocao`
+-- AUTO_INCREMENT cho bảng `baocao`
 --
 ALTER TABLE `baocao`
   MODIFY `id_bao_cao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
--- AUTO_INCREMENT for table `binhluan`
+-- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
   MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
--- AUTO_INCREMENT for table `donhang`
+-- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 --
--- AUTO_INCREMENT for table `gioithieu`
+-- AUTO_INCREMENT cho bảng `gioithieu`
 --
 ALTER TABLE `gioithieu`
   MODIFY `id_gioi_thieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `lienhe`
+-- AUTO_INCREMENT cho bảng `lienhe`
 --
 ALTER TABLE `lienhe`
   MODIFY `id_lien_he` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT for table `loaisanpham`
+-- AUTO_INCREMENT cho bảng `loaisanpham`
 --
 ALTER TABLE `loaisanpham`
   MODIFY `id_loai_san_pham` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `nguoidung`
+-- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id_nguoi_dung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_nguoi_dung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
--- AUTO_INCREMENT for table `sanpham`
+-- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
--- AUTO_INCREMENT for table `thongtinlienhe`
+-- AUTO_INCREMENT cho bảng `thongtinlienhe`
 --
 ALTER TABLE `thongtinlienhe`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
